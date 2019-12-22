@@ -1,18 +1,19 @@
 on: push
+name: Test
 jobs:
   test:
+    name: Test
     runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X']
     steps:
-    - uses: actions/checkout@master
-    - name: Switch XCode Version
-      run: sudo xcode-select -s /Applications/Xcode_11.app
-    - name: Install Dependences
-      run: |
-        cd Example
-        pod repo update
-        pod install
-      shell: bash
-    - uses: ty0x2333/cocoapods-action@master
-      with:
-        additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
-        additional_lint_params: --private
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Build and test
+        run: |
+          pod install
+          xcodebuild clean test -project "Binh Minh Collab.xcworkspace" -scheme Texstyle -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          bash <(curl -s https://codecov.io/bash)
+        env: 
+         destination: ${{ matrix.destination }}
