@@ -1,0 +1,61 @@
+PODS:
+  - Alamofire (4.9.0)
+  - JGProgressHUD (2.1)
+  - Kingfisher (5.8.3):
+    - Kingfisher/Core (= 5.8.3)
+  - Kingfisher/Core (5.8.3)
+  - LTHRadioButton (1.2.3)
+  - MarqueeLabel (4.0.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - NotificationBannerSwift (3.0.0):
+    - MarqueeLabel (~> 4.0.0)
+    - SnapKit (~> 5.0.0)
+  - PanModal (1.2.4)
+  - Result (4.1.0)
+  - SnapKit (5.0.1)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.1)
+  - JGProgressHUD
+  - Kingfisher (~> 5.0)
+  - LTHRadioButton
+  - Moya (~> 13.0)
+  - NotificationBannerSwift
+  - PanModal
+  - SwiftyJSON (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - JGProgressHUD
+    - Kingfisher
+    - LTHRadioButton
+    - MarqueeLabel
+    - Moya
+    - NotificationBannerSwift
+    - PanModal
+    - Result
+    - SnapKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
+  Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
+  LTHRadioButton: b20980614572f7911272a6b8aa79ec0fdc9a74d4
+  MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  NotificationBannerSwift: 842401d30f5c36e4f2eafc152824566f6b3c1bb5
+  PanModal: 275f6d4d07565ddf4ed16d7be5d9cd275682d80d
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 7d115eefdc59760de00966340497a2b34f4478e3
+
+COCOAPODS: 1.8.3
