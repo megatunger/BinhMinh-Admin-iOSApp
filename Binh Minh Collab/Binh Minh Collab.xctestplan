@@ -1,0 +1,23 @@
+{
+  "configurations" : [
+    {
+      "id" : "8D6C8D0D-CF88-4630-A480-AAE85FA5B1AC",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Binh Minh Collab.xcodeproj",
+      "identifier" : "D83220AA232A720300189B20",
+      "name" : "Binh Minh Collab"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

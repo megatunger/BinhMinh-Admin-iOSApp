@@ -42,6 +42,7 @@
 		D877D49E2330964300F06783 /* StudentInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D877D49D2330964300F06783 /* StudentInfoModal.swift */; };
 		D8921E14233B468C008B4B73 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8921E13233B468C008B4B73 /* ContactCell.swift */; };
 		D894C5CB233B24D60051AD4A /* Student_Off.swift in Sources */ = {isa = PBXBuildFile; fileRef = D894C5CA233B24D60051AD4A /* Student_Off.swift */; };
+		D89FA00123AF976000892074 /* Binh_Minh_CollabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FA00023AF976000892074 /* Binh_Minh_CollabTests.swift */; };
 		D8AB3933234E77CD009A43B4 /* step_3_MC + tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB3932234E77CD009A43B4 /* step_3_MC + tableView.swift */; };
 		D8AB3935234E7A3C009A43B4 /* step_3_MC + Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB3934234E7A3C009A43B4 /* step_3_MC + Styles.swift */; };
 		D8C673B6233A16A400B8EDAE /* resultScreen+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C673B5233A16A400B8EDAE /* resultScreen+Styles.swift */; };
@@ -57,6 +58,16 @@
 		D8EE4551233B6AA9007BB8D3 /* sendSiblings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE4550233B6AA9007BB8D3 /* sendSiblings.swift */; };
 		D8FB670C233744AD00CA1C09 /* CheckInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB670B233744AD00CA1C09 /* CheckInResponse.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D89FA00323AF976000892074 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D83220A3232A720300189B20 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D83220AA232A720300189B20;
+			remoteInfo = "Binh Minh Collab";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6A253EA5BA6D7F933026892D /* Pods-Binh Minh Collab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Binh Minh Collab.debug.xcconfig"; path = "Target Support Files/Pods-Binh Minh Collab/Pods-Binh Minh Collab.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +109,11 @@
 		D877D49D2330964300F06783 /* StudentInfoModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoModal.swift; sourceTree = "<group>"; };
 		D8921E13233B468C008B4B73 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		D894C5CA233B24D60051AD4A /* Student_Off.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student_Off.swift; sourceTree = "<group>"; };
+		D89F9FF823AF967E00892074 /* Binh Minh Collab.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Binh Minh Collab.xctestplan"; sourceTree = "<group>"; };
+		D89F9FF923AF96E500892074 /* Binh Minh Collab Test.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Binh Minh Collab Test.xctestplan"; sourceTree = "<group>"; };
+		D89F9FFE23AF976000892074 /* Binh Minh CollabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Binh Minh CollabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D89FA00023AF976000892074 /* Binh_Minh_CollabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binh_Minh_CollabTests.swift; sourceTree = "<group>"; };
+		D89FA00223AF976000892074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8AB3932234E77CD009A43B4 /* step_3_MC + tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "step_3_MC + tableView.swift"; sourceTree = "<group>"; };
 		D8AB3934234E7A3C009A43B4 /* step_3_MC + Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "step_3_MC + Styles.swift"; sourceTree = "<group>"; };
 		D8C673B5233A16A400B8EDAE /* resultScreen+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "resultScreen+Styles.swift"; sourceTree = "<group>"; };
@@ -120,6 +136,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0599CD41FA6104F5DD437DC /* Pods_Binh_Minh_Collab.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D89F9FFB23AF976000892074 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				D83220AD232A720300189B20 /* Binh Minh Collab */,
+				D89F9FFF23AF976000892074 /* Binh Minh CollabTests */,
 				D83220AC232A720300189B20 /* Products */,
 				AB9207C8045C598086027DCC /* Pods */,
 				41583DD9B4323B0DF63A4041 /* Frameworks */,
@@ -193,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				D83220AB232A720300189B20 /* Binh Minh Collab.app */,
+				D89F9FFE23AF976000892074 /* Binh Minh CollabTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +234,8 @@
 				D83220B5232A720400189B20 /* Assets.xcassets */,
 				D83220B7232A720400189B20 /* LaunchScreen.storyboard */,
 				D83220BA232A720400189B20 /* Info.plist */,
+				D89F9FF823AF967E00892074 /* Binh Minh Collab.xctestplan */,
+				D89F9FF923AF96E500892074 /* Binh Minh Collab Test.xctestplan */,
 			);
 			path = "Binh Minh Collab";
 			sourceTree = "<group>";
@@ -317,6 +344,15 @@
 			path = "Popup Modal";
 			sourceTree = "<group>";
 		};
+		D89F9FFF23AF976000892074 /* Binh Minh CollabTests */ = {
+			isa = PBXGroup;
+			children = (
+				D89FA00023AF976000892074 /* Binh_Minh_CollabTests.swift */,
+				D89FA00223AF976000892074 /* Info.plist */,
+			);
+			path = "Binh Minh CollabTests";
+			sourceTree = "<group>";
+		};
 		D8D5F569233E32B600662481 /* callSiblings */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,18 +395,40 @@
 			productReference = D83220AB232A720300189B20 /* Binh Minh Collab.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D89F9FFD23AF976000892074 /* Binh Minh CollabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D89FA00523AF976000892074 /* Build configuration list for PBXNativeTarget "Binh Minh CollabTests" */;
+			buildPhases = (
+				D89F9FFA23AF976000892074 /* Sources */,
+				D89F9FFB23AF976000892074 /* Frameworks */,
+				D89F9FFC23AF976000892074 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D89FA00423AF976000892074 /* PBXTargetDependency */,
+			);
+			name = "Binh Minh CollabTests";
+			productName = "Binh Minh CollabTests";
+			productReference = D89F9FFE23AF976000892074 /* Binh Minh CollabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D83220A3232A720300189B20 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Hoàng Sơn Tùng";
 				TargetAttributes = {
 					D83220AA232A720300189B20 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					D89F9FFD23AF976000892074 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = D83220AA232A720300189B20;
 					};
 				};
 			};
@@ -388,6 +446,7 @@
 			projectRoot = "";
 			targets = (
 				D83220AA232A720300189B20 /* Binh Minh Collab */,
+				D89F9FFD23AF976000892074 /* Binh Minh CollabTests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,6 +461,13 @@
 				D81200122339056A00E8992F /* resultScreen.storyboard in Resources */,
 				D83220B6232A720400189B20 /* Assets.xcassets in Resources */,
 				D83220C3232A724B00189B20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D89F9FFC23AF976000892074 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +566,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D89F9FFA23AF976000892074 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D89FA00123AF976000892074 /* Binh_Minh_CollabTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D89FA00423AF976000892074 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D83220AA232A720300189B20 /* Binh Minh Collab */;
+			targetProxy = D89FA00323AF976000892074 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D83220B7232A720400189B20 /* LaunchScreen.storyboard */ = {
@@ -670,6 +752,46 @@
 			};
 			name = Release;
 		};
+		D89FA00623AF976000892074 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Binh Minh CollabTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.Binh-Minh-CollabTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Binh Minh Collab.app/Binh Minh Collab";
+			};
+			name = Debug;
+		};
+		D89FA00723AF976000892074 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Binh Minh CollabTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.Binh-Minh-CollabTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Binh Minh Collab.app/Binh Minh Collab";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -687,6 +809,15 @@
 			buildConfigurations = (
 				D83220BE232A720400189B20 /* Debug */,
 				D83220BF232A720400189B20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D89FA00523AF976000892074 /* Build configuration list for PBXNativeTarget "Binh Minh CollabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D89FA00623AF976000892074 /* Debug */,
+				D89FA00723AF976000892074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
