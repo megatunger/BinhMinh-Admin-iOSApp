@@ -768,7 +768,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Binh Minh Collab.app/Binh Minh Collab";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BM Admin.app/BM Admin";
 			};
 			name = Debug;
 		};
@@ -788,7 +788,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Binh Minh Collab.app/Binh Minh Collab";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BM Admin.app/BM Admin";
 			};
 			name = Release;
 		};
