@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-
 class manualCheckin: UIViewController {
     @IBOutlet weak var nextStep1: UIButton!
     @IBOutlet weak var idField: UITextField!

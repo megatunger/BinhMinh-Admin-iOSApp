@@ -83,7 +83,7 @@
 		D81355EE234D5EB000F88C78 /* step_2_MC + tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "step_2_MC + tableView.swift"; sourceTree = "<group>"; };
 		D81355F0234D5EF400F88C78 /* classroom_cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classroom_cell.swift; sourceTree = "<group>"; };
 		D81355F2234D639F00F88C78 /* manualCheckinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manualCheckinResponse.swift; sourceTree = "<group>"; };
-		D83220AB232A720300189B20 /* Binh Minh Collab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Binh Minh Collab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83220AB232A720300189B20 /* BM Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BM Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83220AE232A720300189B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D83220B5232A720400189B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D83220B8232A720400189B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		D83220AC232A720300189B20 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D83220AB232A720300189B20 /* Binh Minh Collab.app */,
+				D83220AB232A720300189B20 /* BM Admin.app */,
 				D89F9FFE23AF976000892074 /* Binh Minh CollabTests.xctest */,
 			);
 			name = Products;
@@ -392,7 +392,7 @@
 			);
 			name = "Binh Minh Collab";
 			productName = "Binh Minh Collab";
-			productReference = D83220AB232A720300189B20 /* Binh Minh Collab.app */;
+			productReference = D83220AB232A720300189B20 /* BM Admin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D89F9FFD23AF976000892074 /* Binh Minh CollabTests */ = {
@@ -726,7 +726,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.Binh-Minh-Collab";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BM Admin";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -746,7 +746,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.Binh-Minh-Collab";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BM Admin";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

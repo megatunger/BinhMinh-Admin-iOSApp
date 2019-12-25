@@ -12,6 +12,6 @@ struct Constant {
     
     static var cornerRadius = 15
     
-    static var baseURL = "http://172.16.15.162:3000"
+    static var baseURL = "http://binhminh.megatunger.codes"
     
 }
