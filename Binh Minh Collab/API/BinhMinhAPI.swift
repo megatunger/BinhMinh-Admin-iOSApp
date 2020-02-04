@@ -11,7 +11,7 @@ import Moya
 
 public enum BinhMinhAPI {
     case getStudentDetail(id: Int)
-    case autoCheckIn(id: Int)
+    case autoCheckIn(login_token: String, otp: String)
     case getAbsentList
     case manualCheckinGetData(id: Int)
     case manualCheckinSubmitData(student_id: Int, classroom_id: Int, event_id: Int)
@@ -19,7 +19,7 @@ public enum BinhMinhAPI {
 
 extension BinhMinhAPI: TargetType {
     
-    public var baseURL: URL { return URL(string: Constant.baseURL+"/api")!}
+    public var baseURL: URL { return URL(string: Constant.baseURL+"/api/v2/admin")!}
     
     public var headers: [String : String]? {
         return ["Content-type": "application/json; charset=UTF-8"]
@@ -29,8 +29,8 @@ extension BinhMinhAPI: TargetType {
         switch self {
         case .getStudentDetail(let id):
             return "/students/\(id).json"
-        case .autoCheckIn(let id):
-            return "/students/auto_checkin/\(id).json"
+        case .autoCheckIn( _, _):
+            return "/check-in"
         case .getAbsentList:
             return "/get_absent_list.json"
         case .manualCheckinGetData(let id):
@@ -59,8 +59,8 @@ extension BinhMinhAPI: TargetType {
         switch self {
         case .getStudentDetail:
             return .requestPlain
-        case .autoCheckIn:
-            return .requestPlain
+        case .autoCheckIn(let login_token, let otp):
+            return .requestParameters(parameters: ["login_token" : login_token, "otp" : otp], encoding: URLEncoding.queryString)
         case .getAbsentList:
             return .requestPlain
         case .manualCheckinGetData:
@@ -81,7 +81,7 @@ extension BinhMinhAPI: TargetType {
 protocol Networkable {
     var provider: MoyaProvider<BinhMinhAPI> { get }
     func getStudentDetail(id: Int, completion: @escaping (Student?, Error?) -> ())
-    func autoCheckIn(id: Int, completion: @escaping (CheckInResponse?, Error?) -> ())
+    func autoCheckIn(login_token: String, otp: String, completion: @escaping (CheckInResponse?, Error?) -> ())
     func getAbsentList(completion: @escaping([Section]?, Error?) -> ())
     func manualCheckinGetData(id: Int, completion: @escaping(manualCheckinResponse?, Error?) -> ())
     func manualCheckinSubmitData(student_id: Int, classroom_id: Int, event_id: Int, completion: @escaping(manualCheckinSubmitResponse?, Error?) -> ())

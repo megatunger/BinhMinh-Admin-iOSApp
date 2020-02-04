@@ -45,6 +45,8 @@
 		D89FA00123AF976000892074 /* Binh_Minh_CollabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89FA00023AF976000892074 /* Binh_Minh_CollabTests.swift */; };
 		D8AB3933234E77CD009A43B4 /* step_3_MC + tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB3932234E77CD009A43B4 /* step_3_MC + tableView.swift */; };
 		D8AB3935234E7A3C009A43B4 /* step_3_MC + Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AB3934234E7A3C009A43B4 /* step_3_MC + Styles.swift */; };
+		D8AD782923E848DD0024136B /* CheckInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD782823E848DD0024136B /* CheckInResponse.swift */; };
+		D8AD782B23E848E30024136B /* CheckInDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AD782A23E848E30024136B /* CheckInDetails.swift */; };
 		D8C673B6233A16A400B8EDAE /* resultScreen+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C673B5233A16A400B8EDAE /* resultScreen+Styles.swift */; };
 		D8C673B8233A180000B8EDAE /* navigationResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C673B7233A180000B8EDAE /* navigationResultScreen.swift */; };
 		D8D5F56B233E32DA00662481 /* callSiblings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D5F56A233E32DA00662481 /* callSiblings.swift */; };
@@ -52,11 +54,11 @@
 		D8D5F56F233E366D00662481 /* resultScreen+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D5F56E233E366D00662481 /* resultScreen+tableView.swift */; };
 		D8D5F571233E3E9600662481 /* callSiblings+call.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D5F570233E3E9600662481 /* callSiblings+call.swift */; };
 		D8D5F573233E3EB600662481 /* callSiblings+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D5F572233E3EB600662481 /* callSiblings+tableView.swift */; };
+		D8DA88ED23E4941A00946034 /* AutoCheckInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA88EC23E4941900946034 /* AutoCheckInRequest.swift */; };
 		D8E29A47234EE1160074CA84 /* lecture_cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E29A46234EE1160074CA84 /* lecture_cell.swift */; };
 		D8ECB721233DFC41008A3422 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECB720233DFC41008A3422 /* Section.swift */; };
 		D8ECB723233E0839008A3422 /* sendSiblings+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ECB722233E0839008A3422 /* sendSiblings+Styles.swift */; };
 		D8EE4551233B6AA9007BB8D3 /* sendSiblings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EE4550233B6AA9007BB8D3 /* sendSiblings.swift */; };
-		D8FB670C233744AD00CA1C09 /* CheckInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FB670B233744AD00CA1C09 /* CheckInResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		D89FA00223AF976000892074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8AB3932234E77CD009A43B4 /* step_3_MC + tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "step_3_MC + tableView.swift"; sourceTree = "<group>"; };
 		D8AB3934234E7A3C009A43B4 /* step_3_MC + Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "step_3_MC + Styles.swift"; sourceTree = "<group>"; };
+		D8AD782823E848DD0024136B /* CheckInResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInResponse.swift; sourceTree = "<group>"; };
+		D8AD782A23E848E30024136B /* CheckInDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInDetails.swift; sourceTree = "<group>"; };
 		D8C673B5233A16A400B8EDAE /* resultScreen+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "resultScreen+Styles.swift"; sourceTree = "<group>"; };
 		D8C673B7233A180000B8EDAE /* navigationResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationResultScreen.swift; sourceTree = "<group>"; };
 		D8D5F56A233E32DA00662481 /* callSiblings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = callSiblings.swift; sourceTree = "<group>"; };
@@ -123,11 +127,11 @@
 		D8D5F56E233E366D00662481 /* resultScreen+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "resultScreen+tableView.swift"; sourceTree = "<group>"; };
 		D8D5F570233E3E9600662481 /* callSiblings+call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "callSiblings+call.swift"; sourceTree = "<group>"; };
 		D8D5F572233E3EB600662481 /* callSiblings+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "callSiblings+tableView.swift"; sourceTree = "<group>"; };
+		D8DA88EC23E4941900946034 /* AutoCheckInRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCheckInRequest.swift; sourceTree = "<group>"; };
 		D8E29A46234EE1160074CA84 /* lecture_cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lecture_cell.swift; sourceTree = "<group>"; };
 		D8ECB720233DFC41008A3422 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		D8ECB722233E0839008A3422 /* sendSiblings+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "sendSiblings+Styles.swift"; sourceTree = "<group>"; };
 		D8EE4550233B6AA9007BB8D3 /* sendSiblings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendSiblings.swift; sourceTree = "<group>"; };
-		D8FB670B233744AD00CA1C09 /* CheckInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,8 +270,8 @@
 		D8479D27232D14E800FA2B69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8AD782723E848B50024136B /* CheckIn */,
 				D8479D43232E5CD100FA2B69 /* Student.swift */,
-				D8FB670B233744AD00CA1C09 /* CheckInResponse.swift */,
 				D894C5CA233B24D60051AD4A /* Student_Off.swift */,
 				D8ECB720233DFC41008A3422 /* Section.swift */,
 				D81355F2234D639F00F88C78 /* manualCheckinResponse.swift */,
@@ -351,6 +355,16 @@
 				D89FA00223AF976000892074 /* Info.plist */,
 			);
 			path = "Binh Minh CollabTests";
+			sourceTree = "<group>";
+		};
+		D8AD782723E848B50024136B /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				D8DA88EC23E4941900946034 /* AutoCheckInRequest.swift */,
+				D8AD782823E848DD0024136B /* CheckInResponse.swift */,
+				D8AD782A23E848E30024136B /* CheckInDetails.swift */,
+			);
+			path = CheckIn;
 			sourceTree = "<group>";
 		};
 		D8D5F569233E32B600662481 /* callSiblings */ = {
@@ -524,6 +538,7 @@
 				D8479D3B232E4AB200FA2B69 /* PopUpModal.swift in Sources */,
 				D81355EF234D5EB000F88C78 /* step_2_MC + tableView.swift in Sources */,
 				D8E29A47234EE1160074CA84 /* lecture_cell.swift in Sources */,
+				D8AD782923E848DD0024136B /* CheckInResponse.swift in Sources */,
 				D8D5F571233E3E9600662481 /* callSiblings+call.swift in Sources */,
 				D83220C9232A731900189B20 /* LoginController.swift in Sources */,
 				D8603EE3233E0B8E0083B325 /* sendSiblings+tableView.swift in Sources */,
@@ -531,8 +546,8 @@
 				D8479D2F232D283700FA2B69 /* rootScanView.swift in Sources */,
 				D877D494232FE04100F06783 /* BinhMinhAPI.swift in Sources */,
 				D84DEE72234C96AB004A9521 /* step_3_MC.swift in Sources */,
+				D8AD782B23E848E30024136B /* CheckInDetails.swift in Sources */,
 				D81355F1234D5EF400F88C78 /* classroom_cell.swift in Sources */,
-				D8FB670C233744AD00CA1C09 /* CheckInResponse.swift in Sources */,
 				D894C5CB233B24D60051AD4A /* Student_Off.swift in Sources */,
 				D877D49E2330964300F06783 /* StudentInfoModal.swift in Sources */,
 				D83220C5232A724B00189B20 /* rootViewController.swift in Sources */,
@@ -550,6 +565,7 @@
 				D83220D1232A846300189B20 /* Constant.swift in Sources */,
 				D8C673B8233A180000B8EDAE /* navigationResultScreen.swift in Sources */,
 				D877D497232FE81300F06783 /* BinhMinhAPIManager.swift in Sources */,
+				D8DA88ED23E4941A00946034 /* AutoCheckInRequest.swift in Sources */,
 				D84DEE74234C96C6004A9521 /* finished_MC.swift in Sources */,
 				D80FF824234C8A8D00FCC52B /* manualCheckin + Styles.swift in Sources */,
 				D877D49C23308D8B00F06783 /* StackedProfileViewController.swift in Sources */,
@@ -757,6 +773,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 679FU78457;
 				INFOPLIST_FILE = "Binh Minh CollabTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -777,6 +794,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 679FU78457;
 				INFOPLIST_FILE = "Binh Minh CollabTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

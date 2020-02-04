@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import Vision
-
+import JGProgressHUD
 
 public protocol ScanViewDelegate {
     func ScanResult(ScanValue: String)
@@ -22,6 +22,7 @@ class ScanView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     var previewLayer: AVCaptureVideoPreviewLayer?
     var delegate: ScanViewDelegate?
     var deinitVisionFramework = false
+    let hud = JGProgressHUD(style: .dark)
     
     private let visionQueue = DispatchQueue(label: "com.example.apple samplecode.ARKitVision.serialVisionQueue")
     

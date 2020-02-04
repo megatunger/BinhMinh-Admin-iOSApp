@@ -32,8 +32,8 @@ class BinhMinhAPIManager: Networkable {
         }
     }
     
-    func autoCheckIn(id: Int, completion: @escaping (CheckInResponse?, Error?) -> ()) {
-        provider.request(.autoCheckIn(id: id))
+    func autoCheckIn(login_token: String, otp: String, completion: @escaping (CheckInResponse?, Error?) -> ()) {
+        provider.request(.autoCheckIn(login_token: login_token, otp: otp))
         { (response) in
             switch response.result {
             case .failure(let error):
