@@ -54,7 +54,7 @@ class rootScanView: ScanView, ScanViewDelegate {
 
                     case "success":
                         let title = "Thành công"
-                        let subtitle = data?.checkInDetails?.classroomName
+                        let subtitle = "Lớp: \(data?.checkInDetails?.classroomName ?? "")\nCập nhật: \(data?.checkInDetails?.currentStudents ?? -1)/\(data?.checkInDetails?.numberStudents ?? -1) học sinh"
                         let banner = FloatingNotificationBanner(title: title, subtitle: subtitle, style: .success)
                         banner.duration = 5.0
                         banner.show()

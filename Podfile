@@ -14,4 +14,5 @@ target 'Binh Minh Collab' do
   pod 'LTHRadioButton'
   pod 'SwiftyJSON', '~> 5.0.0'
   pod 'JGProgressHUD'
+  pod 'Eureka'
 end

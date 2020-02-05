@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9To-lX-l7U">
             <objects>
-                <navigationController navigationBarHidden="YES" id="Is2-fJ-mwS" customClass="NavigationController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="Is2-fJ-mwS" customClass="NavigationController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aRO-aY-k23">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -26,7 +26,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,34 +105,23 @@
                         <outlet property="PasswordField" destination="XrS-KS-rKd" id="JKU-Oc-pUV"/>
                         <outlet property="txtPassword" destination="XrS-KS-rKd" id="I1v-8f-N2w"/>
                         <outlet property="txtUserName" destination="Tfo-9D-4EF" id="EtZ-f5-bSz"/>
+                        <segue destination="ZrS-cW-Gma" kind="show" identifier="authenticateCompleted" id="u1Y-Xu-oFE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-504.34782608695656" y="-39.130434782608695"/>
+            <point key="canvasLocation" x="-522" y="-39"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Điểm Danh-->
         <scene sceneID="hdD-TM-xrh">
             <objects>
-                <viewController storyboardIdentifier="rootViewController" id="igX-Vk-qeU" customClass="rootViewController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="igX-Vk-qeU" customClass="rootViewController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2v-mx-blK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-b3-kUr">
-                                <rect key="frame" x="20" y="428" width="374" height="60"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Fmp-ew-HY9"/>
-                                </constraints>
-                                <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Đăng xuất"/>
-                                <connections>
-                                    <action selector="logoutUser:" destination="igX-Vk-qeU" eventType="touchUpInside" id="TIW-rP-bwO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EI-ln-lEN">
-                                <rect key="frame" x="20" y="656" width="374" height="60"/>
+                                <rect key="frame" x="20" y="607" width="374" height="60"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.37647058820000001" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Dwz-uo-to2"/>
@@ -147,7 +136,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbI-vG-iP1">
-                                <rect key="frame" x="20" y="504" width="374" height="60"/>
+                                <rect key="frame" x="20" y="455" width="374" height="60"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="XJH-5t-cnx"/>
@@ -161,7 +150,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKQ-wK-8mE">
-                                <rect key="frame" x="20" y="580" width="374" height="60"/>
+                                <rect key="frame" x="20" y="531" width="374" height="60"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Zd7-2k-mTb"/>
@@ -181,6 +170,18 @@
                                     <constraint firstAttribute="width" secondItem="Pcy-h4-4hc" secondAttribute="height" multiplier="79:90" id="EnM-hg-2cT"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-b3-kUr">
+                                <rect key="frame" x="20" y="379" width="374" height="60"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Fmp-ew-HY9"/>
+                                </constraints>
+                                <color key="tintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Đăng xuất"/>
+                                <connections>
+                                    <action selector="logoutUser:" destination="igX-Vk-qeU" eventType="touchUpInside" id="TIW-rP-bwO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -204,6 +205,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fJV-gC-Y3e"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Điểm Danh" image="checkin" id="MTs-cM-Bpc"/>
                     <navigationItem key="navigationItem" id="c83-Gb-Fyg"/>
                     <connections>
                         <outlet property="CheckInButton" destination="0EI-ln-lEN" id="9ni-V3-VXa"/>
@@ -214,11 +216,218 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuI-kk-BST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150.72463768115944" y="-39.130434782608695"/>
+            <point key="canvasLocation" x="1057.9710144927537" y="-39.130434782608695"/>
+        </scene>
+        <!--Gửi Thông Báo-->
+        <scene sceneID="07L-O0-Lqb">
+            <objects>
+                <viewController id="efr-ax-iWh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nSl-ba-GdS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zmp-YN-H4k">
+                                <rect key="frame" x="20" y="383" width="374" height="288"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur7-It-119">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ur7-It-119" secondAttribute="height" multiplier="187:30" id="nFa-1n-ncI"/>
+                                            <constraint firstAttribute="width" secondItem="ur7-It-119" secondAttribute="height" multiplier="187:30" id="njq-9H-pcR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Toàn Bộ Trung Tâm">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CheckInStart:" destination="igX-Vk-qeU" eventType="touchUpInside" id="yyR-pA-Pd7"/>
+                                            <segue destination="7tc-6r-ZBg" kind="show" id="YNG-YF-x6p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO8-fV-Gsb">
+                                        <rect key="frame" x="0.0" y="76" width="374" height="60"/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.37647058820000001" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MO8-fV-Gsb" secondAttribute="height" multiplier="187:30" id="lA4-oN-TSs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Ca Học">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CheckInStart:" destination="igX-Vk-qeU" eventType="touchUpInside" id="OoO-US-Hfh"/>
+                                            <segue destination="xy9-Aj-BHM" kind="show" id="svw-b3-Nfv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcS-EW-wof">
+                                        <rect key="frame" x="0.0" y="152" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="9Ex-hn-18C"/>
+                                            <constraint firstAttribute="width" secondItem="mcS-EW-wof" secondAttribute="height" multiplier="187:30" id="m40-pa-NR5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Học Sinh">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reviewCheckIn:" destination="igX-Vk-qeU" eventType="touchUpInside" id="uYu-gG-C9d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqW-mn-CxZ">
+                                        <rect key="frame" x="0.0" y="228" width="374" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fqW-mn-CxZ" secondAttribute="height" multiplier="187:30" id="A85-ba-N9f"/>
+                                            <constraint firstAttribute="width" secondItem="fqW-mn-CxZ" secondAttribute="height" multiplier="187:30" id="V4c-UG-IKA"/>
+                                            <constraint firstAttribute="height" constant="60" id="jGo-ju-wWP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Phụ Huynh">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="reviewCheckIn:" destination="igX-Vk-qeU" eventType="touchUpInside" id="O0P-I3-MuK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pEo-NY-fMG" firstAttribute="bottom" secondItem="Zmp-YN-H4k" secondAttribute="bottom" constant="16" id="Dxg-xf-zPy"/>
+                            <constraint firstItem="Zmp-YN-H4k" firstAttribute="leading" secondItem="pEo-NY-fMG" secondAttribute="leading" constant="20" id="MK7-Oi-IuB"/>
+                            <constraint firstItem="pEo-NY-fMG" firstAttribute="trailing" secondItem="Zmp-YN-H4k" secondAttribute="trailing" constant="20" id="eYp-cV-CzQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pEo-NY-fMG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gửi Thông Báo" id="QWI-HH-I87"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndK-hK-yXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965.217391304348" y="636.68478260869574"/>
+        </scene>
+        <!--Gửi TB: Toàn Bộ TT-->
+        <scene sceneID="lAO-pi-iOY">
+            <objects>
+                <viewController id="7tc-6r-ZBg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e6D-1o-BXh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lg-ra-CLl">
+                                <rect key="frame" x="20" y="611" width="374" height="60"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.37647058820000001" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4lg-ra-CLl" secondAttribute="height" multiplier="187:30" id="BAi-TJ-ErJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Gửi">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CheckInStart:" destination="igX-Vk-qeU" eventType="touchUpInside" id="qH9-Ji-dtZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8gK-Rd-oJ6" firstAttribute="trailing" secondItem="4lg-ra-CLl" secondAttribute="trailing" constant="20" id="Pa0-JM-wr1"/>
+                            <constraint firstItem="8gK-Rd-oJ6" firstAttribute="bottom" secondItem="4lg-ra-CLl" secondAttribute="bottom" constant="16" id="apA-y8-nM1"/>
+                            <constraint firstItem="4lg-ra-CLl" firstAttribute="leading" secondItem="8gK-Rd-oJ6" secondAttribute="leading" constant="20" id="s0G-kc-aE8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8gK-Rd-oJ6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gửi TB: Toàn Bộ TT" id="ZAz-Js-Wmk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UhF-6B-79E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950.7246376811595" y="979.89130434782612"/>
+        </scene>
+        <!--Gửi TB: Ca Học-->
+        <scene sceneID="erp-ZD-1kf">
+            <objects>
+                <viewController id="xy9-Aj-BHM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cD8-bl-5jq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="GTP-rX-MBj">
+                                <rect key="frame" x="0.0" y="104" width="414" height="583"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Xkv-4f-ciW">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xkv-4f-ciW" id="7h2-Kh-Eel">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GTP-rX-MBj" firstAttribute="trailing" secondItem="5zI-Md-EDj" secondAttribute="trailing" id="Fce-Hk-2aU"/>
+                            <constraint firstItem="GTP-rX-MBj" firstAttribute="bottom" secondItem="5zI-Md-EDj" secondAttribute="bottom" id="Xry-3L-Ac5"/>
+                            <constraint firstItem="GTP-rX-MBj" firstAttribute="top" secondItem="cD8-bl-5jq" secondAttribute="top" constant="104" id="j4Q-B9-hwQ"/>
+                            <constraint firstItem="GTP-rX-MBj" firstAttribute="leading" secondItem="5zI-Md-EDj" secondAttribute="leading" id="sTY-0q-yfE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5zI-Md-EDj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gửi TB: Ca Học" id="OFj-e9-9o9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EuM-Yk-o9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942.0289855072465" y="301.63043478260875"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uQz-hr-GaE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ZrS-cW-Gma" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="USy-Xj-1p9"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lzu-o5-Uqq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="igX-Vk-qeU" kind="relationship" relationship="viewControllers" id="IZ1-DV-7hy"/>
+                        <segue destination="qEB-45-Efl" kind="relationship" relationship="viewControllers" id="8vC-7k-dnW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQk-yM-1lV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="247"/>
+        </scene>
+        <!--Gửi Thông Báo-->
+        <scene sceneID="V8P-Sn-z3G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qEB-45-Efl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Gửi Thông Báo" image="notifications" id="MIx-9K-616"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pWJ-e5-uBn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="104.33333333333334"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="efr-ax-iWh" kind="relationship" relationship="rootViewController" id="yvF-hc-vtb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WU3-kh-RfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="636.68478260869574"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo" width="425" height="603"/>
+        <image name="checkin" width="24" height="24"/>
+        <image name="notifications" width="25" height="25"/>
         <image name="wave" width="1887" height="526"/>
     </resources>
 </document>

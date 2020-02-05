@@ -29,29 +29,33 @@ class step_3_MC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true, completion: nil)
         } else {
-            let hud = JGProgressHUD(style: .dark)
-            hud.vibrancyEnabled = true
-            hud.textLabel.text = "Đang lưu"
-            hud.layoutMargins = UIEdgeInsets.init(top: 0.0, left: 0.0, bottom: 10.0, right: 0.0)
-
-            hud.show(in: self.view)
+            Constant.hud.show(in: self.view)
             
             APIManager.manualCheckinSubmitData(
                 student_id: self.params.student_id ?? 0,
                 classroom_id: self.params.classroom_id ?? 0,
                 event_id: self.params.event_id ?? 0,
-                completion: {(_data, error) in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
-                        UIView.animate(withDuration: 0.3) {
-                            hud.indicatorView = nil
-                            hud.textLabel.font = UIFont.systemFont(ofSize: 30.0)
-                            hud.textLabel.text = _data?.status
-                            hud.position = .bottomCenter
-                        }
-                    }
-                    hud.dismiss(afterDelay: 2.0)
-                    if (_data?.status == "success") {
-                        self.performSegue(withIdentifier: "finished", sender: self)
+                completion: {(data, error) in
+                    Constant.hud.dismiss(afterDelay: 1.0)
+                    switch data?.status {
+                        case "failed":
+                            let alert = UIAlertController(title: "Có lỗi xảy ra", message: data?.errorExplain, preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                                self.navigationController?.dismiss(animated: true, completion: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        case "warning":
+                            let alert = UIAlertController(title: "Thông báo", message: data?.errorExplain, preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                                self.performSegue(withIdentifier: "finished", sender: self)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                        case "success":
+                            self.performSegue(withIdentifier: "finished", sender: self)
+                        case .none:
+                            break
+                        case .some(_):
+                            break
                     }
                 })
         }

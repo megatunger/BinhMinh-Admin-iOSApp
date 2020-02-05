@@ -39,7 +39,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D83220AA232A720300189B20"
-            BuildableName = "BM Admin.app"
+            BuildableName = "BM Administrator.app"
             BlueprintName = "Binh Minh Collab"
             ReferencedContainer = "container:Binh Minh Collab.xcodeproj">
          </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D83220AA232A720300189B20"
-            BuildableName = "BM Admin.app"
+            BuildableName = "BM Administrator.app"
             BlueprintName = "Binh Minh Collab"
             ReferencedContainer = "container:Binh Minh Collab.xcodeproj">
          </BuildableReference>
