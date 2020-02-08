@@ -14,7 +14,7 @@ class resultScreenController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableData: UITableView!
     @IBOutlet weak var completeButton: UIButton!
     let APIManager = BinhMinhAPIManager()
-    var sections = [Section]()
+    var sections = [ClassSections]()
     let hud = JGProgressHUD(style: .dark)
     private let refreshControl = UIRefreshControl()
     
@@ -26,7 +26,7 @@ class resultScreenController: UIViewController, UITableViewDelegate, UITableView
         hud.textLabel.text = "Đang tải dữ liệu"
         hud.show(in: self.view)
         APIManager.getAbsentList(completion: {(data, error) in
-            self.sections = data ?? [Section]()
+            self.sections = data ?? [ClassSections]()
             self.tableData.reloadData()
             self.hud.dismiss(afterDelay: 0.3)
         })

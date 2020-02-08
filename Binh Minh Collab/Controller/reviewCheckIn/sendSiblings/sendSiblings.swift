@@ -13,7 +13,7 @@ import MessageUI
 class sendSiblings: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
     @IBOutlet weak var tableData: UITableView!
     @IBOutlet weak var sendMessageButton: UIButton!
-    var sections = [Section]()
+    var sections = [ClassSections]()
     var Student_Selected = [IndexPath]()
     var count = 0
     

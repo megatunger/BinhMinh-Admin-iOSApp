@@ -35,7 +35,7 @@ class BinhMinhAPIManager: Networkable {
             }
         }
     }
-
+    
     func testConnection(completion: @escaping (Response?, Error?) -> ()) {
         provider.request(.testConnection)
         { (response) in
@@ -91,14 +91,14 @@ class BinhMinhAPIManager: Networkable {
         }
     }
     
-    func getAbsentList(completion: @escaping ([Section]?, Error?) -> ()) {
+    func getAbsentList(completion: @escaping ([ClassSections]?, Error?) -> ()) {
         provider.request(.getAbsentList) {
             (response) in
             switch response.result {
             case .failure(let error):
                 completion(nil, error)
             case .success(let value):
-                var sections = [Section]()
+                var sections = [ClassSections]()
                 do {
                     let json = try JSON(data: value.data)
                     for (_,subJson):(String, JSON) in json["results"] {
@@ -117,9 +117,9 @@ class BinhMinhAPIManager: Networkable {
                             )
                             Students_Off_Per_Class.append(x)
                         }
-                        let section = Section.init(class_id: subJson["class_id"].intValue,
-                                                   class_name: subJson["class_name"].stringValue + ". " + subJson["time"].stringValue,
-                                                   students: Students_Off_Per_Class
+                        let section = ClassSections.init(class_id: subJson["class_id"].intValue,
+                                                         class_name: subJson["class_name"].stringValue + ". " + subJson["time"].stringValue,
+                                                         students: Students_Off_Per_Class
                         )
                         sections.append(section)
                     }
@@ -185,6 +185,97 @@ class BinhMinhAPIManager: Networkable {
                     let x = try decoder.decode(Response.self, from: value.data)
                     completion(x, nil)
                 } catch let error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func getEvents(completion: @escaping ([WeekDay]?, Error?) -> ()) {
+        provider.request(.getEvents) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode([WeekDay].self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func getEventStudents(event_id: Int, completion: @escaping (EventDetails?, Error?) -> ()) {
+        provider.request(.getEventStudents(event_id: event_id)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(EventDetails.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func sendNotifications(title: String, description: String, student_ids: [Int], completion: @escaping (Response?, Error?) -> ()) {
+        provider.request(.sendNotifications(title: title, description: description, student_ids: student_ids)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(Response.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func sendNotificationsToAll(title: String, description: String, completion: @escaping (Response?, Error?) -> ()) {
+        provider.request(.sendNotificationsToAll(title: title, description: description)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(Response.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func searchStudent(query: String, completion: @escaping ([EventStudents]?, Error?) -> ()) {
+        provider.request(.searchStudent(query: query)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode([EventStudents].self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    print(error)
                     completion(nil, error)
                 }
             }

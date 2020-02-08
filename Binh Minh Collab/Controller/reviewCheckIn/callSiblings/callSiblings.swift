@@ -12,6 +12,6 @@ import UIKit
 class callSiblings: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableData: UITableView!
-    var sections = [Section]()
+    var sections = [ClassSections]()
     
 }

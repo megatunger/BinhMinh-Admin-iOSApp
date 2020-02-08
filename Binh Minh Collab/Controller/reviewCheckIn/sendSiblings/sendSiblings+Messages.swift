@@ -11,7 +11,7 @@ import UIKit
 import MessageUI
 extension sendSiblings {
     
-    func getAllPhoneNumberFromOneSection(section: Section) -> String {
+    func getAllPhoneNumberFromOneSection(section: ClassSections) -> String {
         var string = ""
         for student in section.students {
             if student.mother.phone == "" {

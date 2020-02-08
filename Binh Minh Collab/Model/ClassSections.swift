@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Section {
+struct ClassSections {
     var class_id: Int
     var class_name: String
     var students: [Student_Off]
