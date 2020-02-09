@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import Eureka
+import MessageUI
 
-class ContentSendEvent: FormViewController {
+class ContentSendEvent: FormViewController, MFMessageComposeViewControllerDelegate {
     var selectedStudentID = [EventStudents]()
     
     override func viewDidLoad() {
@@ -48,7 +49,6 @@ class ContentSendEvent: FormViewController {
                 $0.tag = "AppNotify"
                 $0.title = "Thông báo qua App"
                 $0.value = true
-                $0.disabled = true
             }
             .onChange { [weak form] in
                 if $0.value == true {
@@ -87,8 +87,10 @@ class ContentSendEvent: FormViewController {
                     let formValues = self.form.values()
                     
                     // Case App Notify Enabled
-                    if (formValues["AppNotify"] as! Bool?) != nil {
-                        self.callAppNotifyAPI(title: titleLabel, description: descriptionLabel)
+                    if let AppNotify = formValues["AppNotify"] as! Bool? {
+                        if AppNotify {
+                            self.callAppNotifyAPI(title: titleLabel, description: descriptionLabel)
+                        }
                     }
                     
                     // Case SMS Notify Enabled
@@ -97,9 +99,9 @@ class ContentSendEvent: FormViewController {
                             // Case Parents Notify Enabled
                             if let ParentsNotify = formValues["ParentsNotify"] as! Bool? {
                                 if ParentsNotify {
-                                    self.callSMSNotifyAPI(parentsNotify: true)
+                                    self.callSMSNotifyAPI(parentsNotify: true, body: formValues["Description"] as! String)
                                 } else {
-                                    self.callSMSNotifyAPI(parentsNotify: false)
+                                    self.callSMSNotifyAPI(parentsNotify: false, body: formValues["Description"] as! String)
                                 }
                             }
                         }
@@ -146,7 +148,25 @@ class ContentSendEvent: FormViewController {
     }
     
     // TODO: COMPOSE SMS HERE
-    func callSMSNotifyAPI(parentsNotify: Bool) {
-        
+    func callSMSNotifyAPI(parentsNotify: Bool, body: String) {
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = body
+            if parentsNotify {
+                let student_phones = selectedStudentID.map { $0.phone }
+                let father_phones = selectedStudentID.map { $0.fatherPhone }
+                let mother_phones = selectedStudentID.map { $0.motherPhone }
+                controller.recipients = student_phones + father_phones + mother_phones
+            } else {
+                controller.recipients = selectedStudentID.map { $0.phone }
+            }
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController!, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
     }
 }

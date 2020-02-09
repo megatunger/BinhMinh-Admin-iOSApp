@@ -26,6 +26,7 @@
 		D83132C123EED89B009CE0A8 /* ListStudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83132C023EED89B009CE0A8 /* ListStudentCell.swift */; };
 		D83132C523EEE7CC009CE0A8 /* Classrooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83132C423EEE7CB009CE0A8 /* Classrooms.swift */; };
 		D83132C823EEE878009CE0A8 /* SendToClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83132C723EEE878009CE0A8 /* SendToClassroomViewController.swift */; };
+		D83132CA23EEE8B5009CE0A8 /* ClassroomSendNotifyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83132C923EEE8B4009CE0A8 /* ClassroomSendNotifyCell.swift */; };
 		D83220AF232A720300189B20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83220AE232A720300189B20 /* AppDelegate.swift */; };
 		D83220B6232A720400189B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83220B5232A720400189B20 /* Assets.xcassets */; };
 		D83220B9232A720400189B20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83220B7232A720400189B20 /* LaunchScreen.storyboard */; };
@@ -110,6 +111,7 @@
 		D83132C023EED89B009CE0A8 /* ListStudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStudentCell.swift; sourceTree = "<group>"; };
 		D83132C423EEE7CB009CE0A8 /* Classrooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classrooms.swift; sourceTree = "<group>"; };
 		D83132C723EEE878009CE0A8 /* SendToClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToClassroomViewController.swift; sourceTree = "<group>"; };
+		D83132C923EEE8B4009CE0A8 /* ClassroomSendNotifyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomSendNotifyCell.swift; sourceTree = "<group>"; };
 		D83220AB232A720300189B20 /* BM Administrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BM Administrator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83220AE232A720300189B20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D83220B5232A720400189B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				D83132C723EEE878009CE0A8 /* SendToClassroomViewController.swift */,
+				D83132C923EEE8B4009CE0A8 /* ClassroomSendNotifyCell.swift */,
 			);
 			path = SendToClassroom;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				D8AD782B23E848E30024136B /* CheckInDetails.swift in Sources */,
 				D81355F1234D5EF400F88C78 /* classroom_cell.swift in Sources */,
 				D894C5CB233B24D60051AD4A /* Student_Off.swift in Sources */,
+				D83132CA23EEE8B5009CE0A8 /* ClassroomSendNotifyCell.swift in Sources */,
 				D877D49E2330964300F06783 /* StudentInfoModal.swift in Sources */,
 				D83220C5232A724B00189B20 /* rootViewController.swift in Sources */,
 				D812000B2338E8B900E8992F /* resultScreenController.swift in Sources */,
@@ -851,14 +855,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 679FU78457;
 				INFOPLIST_FILE = "Binh Minh Collab/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.codes.bm-Administrator";
+				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.codes.bm-admin";
 				PRODUCT_NAME = "BM Administrator";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -873,14 +877,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 679FU78457;
 				INFOPLIST_FILE = "Binh Minh Collab/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.codes.bm-Administrator";
+				PRODUCT_BUNDLE_IDENTIFIER = "megatunger.codes.bm-admin";
 				PRODUCT_NAME = "BM Administrator";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

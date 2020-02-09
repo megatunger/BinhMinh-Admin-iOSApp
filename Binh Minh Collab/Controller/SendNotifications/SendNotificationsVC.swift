@@ -9,10 +9,13 @@
 import UIKit
 
 class SendNotificationsVC: UIViewController {
-
+    @IBOutlet weak var studentButton: UIButton!
+    @IBOutlet weak var classroomButton: UIButton!
+    @IBOutlet weak var eventButton: UIButton!
+    @IBOutlet weak var allButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Style()
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +30,35 @@ class SendNotificationsVC: UIViewController {
     }
     */
 
+}
+
+
+extension SendNotificationsVC {
+    
+    func Style() {
+        studentButtonButtonStyle()
+        classroomButtonButtonStyle()
+        eventButtonButtonStyle()
+        allButtonButtonStyle()
+    }
+    
+    private func studentButtonButtonStyle() {
+        studentButton.layer.cornerRadius = CGFloat(Constant.cornerRadius)
+        studentButton.layer.borderWidth = 0
+    }
+    
+    private func classroomButtonButtonStyle() {
+        classroomButton.layer.cornerRadius = CGFloat(Constant.cornerRadius)
+        classroomButton.layer.borderWidth = 0
+    }
+    
+    private func eventButtonButtonStyle() {
+        eventButton.layer.cornerRadius = CGFloat(Constant.cornerRadius)
+        eventButton.layer.borderWidth = 0
+    }
+    
+    private func allButtonButtonStyle() {
+        allButton.layer.cornerRadius = CGFloat(Constant.cornerRadius)
+        allButton.layer.borderWidth = 0
+    }
 }

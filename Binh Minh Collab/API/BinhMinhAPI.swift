@@ -23,6 +23,9 @@ public enum BinhMinhAPI {
     case sendNotifications(title: String, description: String, student_ids: [Int])
     case sendNotificationsToAll(title: String, description: String)
     case searchStudent(query: String)
+    case getClassrooms
+    case getClassroomStudents(class_id: Int)
+    
 }
 
 extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
@@ -54,11 +57,15 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
         case .getEvents:
             return "/notifications/get-events"
         case .getEventStudents:
-            return "/notifications/get-event-students"
+            return "/notifications/get-students"
         case .sendNotifications:
             return "/notifications/send-notifications"
         case .sendNotificationsToAll:
             return "/notifications/send-notifications-to-all"
+        case .getClassrooms:
+            return "/notifications/get-classrooms"
+        case .getClassroomStudents:
+            return "/notifications/get-students"
         }
     }
     
@@ -88,6 +95,10 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
                 return .post
             case .sendNotificationsToAll:
                 return .post
+            case .getClassrooms:
+                return .get
+            case .getClassroomStudents:
+                return .get
         }
     }
     
@@ -125,6 +136,10 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return .requestParameters(parameters: ["title": title, "description": description, "student_ids": student_ids], encoding: URLEncoding.queryString)
         case .sendNotificationsToAll(let title, let description):
             return .requestParameters(parameters: ["title": title, "description": description], encoding: URLEncoding.queryString)
+        case .getClassrooms:
+            return .requestPlain
+        case .getClassroomStudents(let class_id):
+            return .requestParameters(parameters: ["class_id": class_id], encoding: URLEncoding.queryString)
         }
     }
     
@@ -161,6 +176,8 @@ protocol Networkable {
     func getEventStudents(event_id: Int, completion: @escaping (EventDetails?, Error?) -> ())
     func sendNotifications(title: String, description: String, student_ids: [Int], completion: @escaping (Response?, Error?) -> ())
     func sendNotificationsToAll(title: String, description: String, completion: @escaping(Response?, Error?) -> ())
+    func getClassrooms(completion: @escaping([Classrooms]?, Error?) -> ())
+    func getClassrooomStudents(class_id: Int, completion: @escaping (EventDetails?, Error?) -> ())
     
     // Search APIs
     func searchStudent(query: String, completion: @escaping([EventStudents]?, Error?) -> ())

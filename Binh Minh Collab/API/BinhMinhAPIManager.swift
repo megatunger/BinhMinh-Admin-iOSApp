@@ -281,6 +281,45 @@ class BinhMinhAPIManager: Networkable {
             }
         }
     }
+    
+    func getClassrooms(completion: @escaping ([Classrooms]?, Error?) -> ()) {
+        provider.request(.getClassrooms) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode([Classrooms].self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    func getClassrooomStudents(class_id: Int, completion: @escaping (EventDetails?, Error?) -> ()) {
+        provider.request(.getClassroomStudents(class_id: class_id)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(EventDetails.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
 }
 
 extension BinhMinhAPIManager {

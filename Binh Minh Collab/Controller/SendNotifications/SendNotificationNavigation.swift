@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class SendNotificationNavigation: UINavigationController {
 
     override func viewDidLoad() {

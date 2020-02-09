@@ -65,6 +65,7 @@ class SendToEventViewController: UIViewController, UITableViewDelegate, UITableV
         if segue.identifier == "selectEventStudents" {
             if let destinationVC = segue.destination as? ListEventStudent {
                 destinationVC.event_id = selectEventID
+                destinationVC.type_case = "event"
             }
         }
     }
