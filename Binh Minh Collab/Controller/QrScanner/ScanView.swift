@@ -33,7 +33,7 @@ class ScanView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
         let closeBtn = UIBarButtonItem(title: "Thoát", style: UIBarButtonItem.Style.done, target: nil, action: #selector(selectorX))
         closeBtn.title = "Thoát"
         navigationItem.leftBarButtonItem = closeBtn
-        let saveBtn = UIBarButtonItem(title: "Lưu", style: UIBarButtonItem.Style.done, target: nil, action: #selector(selectorY))
+        let saveBtn = UIBarButtonItem(title: "Xong", style: UIBarButtonItem.Style.done, target: nil, action: #selector(selectorY))
         navigationItem.rightBarButtonItem = saveBtn
         navigationBar.setItems([navigationItem], animated: false)
     }
@@ -44,7 +44,7 @@ class ScanView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     @objc func selectorY() {
-        let resultScreenVC:UIViewController = UIStoryboard(name: "resultScreen", bundle: nil).instantiateViewController(withIdentifier: "navigationresultScreen") as UIViewController
+        let resultScreenVC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationresultScreen") as UIViewController
         self.present(resultScreenVC, animated: true, completion: nil)
         selectorX()
     }

@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9To-lX-l7U">
             <objects>
-                <navigationController navigationBarHidden="YES" id="Is2-fJ-mwS" customClass="NavigationController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="Is2-fJ-mwS" customClass="NavigationController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aRO-aY-k23">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -26,7 +26,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
         <!--Điểm Danh-->
         <scene sceneID="hdD-TM-xrh">
             <objects>
-                <viewController id="igX-Vk-qeU" customClass="rootViewController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="igX-Vk-qeU" customClass="rootViewController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2v-mx-blK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +146,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="reviewCheckIn:" destination="igX-Vk-qeU" eventType="touchUpInside" id="Pgq-4A-2UK"/>
+                                    <segue destination="U9h-gN-JfZ" kind="presentation" id="bG4-k6-m8J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKQ-wK-8mE">
@@ -211,17 +211,179 @@
                         <outlet property="CheckInButton" destination="0EI-ln-lEN" id="9ni-V3-VXa"/>
                         <outlet property="SignOutButton" destination="Y1R-b3-kUr" id="BPf-wS-aWR"/>
                         <outlet property="manualCheckInButton" destination="tKQ-wK-8mE" id="1tg-ta-BHm"/>
-                        <outlet property="reviewCheckInButton" destination="qbI-vG-iP1" id="r9d-4k-9aU"/>
+                        <outlet property="reviewCheckInButton" destination="qbI-vG-iP1" id="4vC-LA-ogw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuI-kk-BST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.9710144927537" y="-39.130434782608695"/>
         </scene>
+        <!--Danh Sách Nghỉ-->
+        <scene sceneID="Gmn-NE-Cqz">
+            <objects>
+                <viewController id="7fG-UI-ywt" customClass="ReviewCheckinViewController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LfS-oE-uCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfS-Rr-0FM">
+                                <rect key="frame" x="20" y="567" width="335" height="60"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="oA1-1S-0tC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Đóng">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTap:" destination="7fG-UI-ywt" eventType="touchUpInside" id="N7H-W2-CFb"/>
+                                    <action selector="reviewCheckIn:" destination="igX-Vk-qeU" eventType="touchUpInside" id="MHr-e6-ktq"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="SUo-kO-m9C">
+                                <rect key="frame" x="0.0" y="56" width="375" height="487"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" textLabel="Ujh-JE-LV9" detailTextLabel="ds7-kb-gck" style="IBUITableViewCellStyleSubtitle" id="mhg-fm-aF3" customClass="EventCell" customModule="BM_Admin" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mhg-fm-aF3" id="TsD-EN-Gtj">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ujh-JE-LV9">
+                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ds7-kb-gck">
+                                                    <rect key="frame" x="15" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="subtitleLabel" destination="ds7-kb-gck" id="gTW-Wc-sbD"/>
+                                            <outlet property="titleLabel" destination="Ujh-JE-LV9" id="paQ-JX-edF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7fG-UI-ywt" id="Hbg-Hf-LOp"/>
+                                    <outlet property="delegate" destination="7fG-UI-ywt" id="bMY-RK-RuC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D55-e8-pr9" firstAttribute="bottom" secondItem="jfS-Rr-0FM" secondAttribute="bottom" constant="20" id="5ed-LE-6OQ"/>
+                            <constraint firstItem="jfS-Rr-0FM" firstAttribute="top" secondItem="SUo-kO-m9C" secondAttribute="bottom" constant="24" id="Tnj-dK-JBQ"/>
+                            <constraint firstItem="SUo-kO-m9C" firstAttribute="trailing" secondItem="D55-e8-pr9" secondAttribute="trailing" id="YNh-fp-J2A"/>
+                            <constraint firstItem="jfS-Rr-0FM" firstAttribute="leading" secondItem="D55-e8-pr9" secondAttribute="leading" constant="20" id="mTF-z3-B77"/>
+                            <constraint firstItem="SUo-kO-m9C" firstAttribute="leading" secondItem="D55-e8-pr9" secondAttribute="leading" id="vyz-7M-iGd"/>
+                            <constraint firstItem="D55-e8-pr9" firstAttribute="trailing" secondItem="jfS-Rr-0FM" secondAttribute="trailing" constant="20" id="wKe-jw-std"/>
+                            <constraint firstItem="SUo-kO-m9C" firstAttribute="top" secondItem="D55-e8-pr9" secondAttribute="top" id="wQP-Ea-L75"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D55-e8-pr9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Danh Sách Nghỉ" id="5dz-rX-9Jc">
+                        <barButtonItem key="leftBarButtonItem" title="Gọi Điện" id="Tpe-LU-kqA">
+                            <connections>
+                                <segue destination="owC-6b-wUC" kind="show" identifier="nextToCall" destinationCreationSelector="sfd:" id="YZi-Ub-yho"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Gửi Tin Nhắn" id="4zL-w9-Hmv">
+                            <connections>
+                                <segue destination="Lr3-WM-fa6" kind="show" identifier="selectedEventStudents" id="R5D-IP-W8E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="jfS-Rr-0FM" id="jJ3-pY-Qap"/>
+                        <outlet property="tableData" destination="SUo-kO-m9C" id="85Q-aD-kXi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNf-8p-wa2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2902.898550724638" y="-498.91304347826093"/>
+        </scene>
+        <!--Gọi Điện-->
+        <scene sceneID="af2-Jb-b5S">
+            <objects>
+                <viewController id="owC-6b-wUC" customClass="CallViewController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lZB-h2-6KA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mqa-os-edj">
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" textLabel="HxK-KD-evw" detailTextLabel="hBw-xH-6Xf" style="IBUITableViewCellStyleSubtitle" id="Djs-LS-hfb" customClass="EventCell" customModule="BM_Admin" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Djs-LS-hfb" id="804-Oj-gFp">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HxK-KD-evw">
+                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hBw-xH-6Xf">
+                                                    <rect key="frame" x="15" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="subtitleLabel" destination="hBw-xH-6Xf" id="P56-9i-sNA"/>
+                                            <outlet property="titleLabel" destination="HxK-KD-evw" id="FtB-Qb-L1h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="owC-6b-wUC" id="adI-OD-Wt0"/>
+                                    <outlet property="delegate" destination="owC-6b-wUC" id="9R2-1y-RHc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mqa-os-edj" firstAttribute="trailing" secondItem="dyX-fc-JRy" secondAttribute="trailing" id="53g-w2-OXi"/>
+                            <constraint firstItem="mqa-os-edj" firstAttribute="top" secondItem="dyX-fc-JRy" secondAttribute="top" id="5cQ-kN-4yZ"/>
+                            <constraint firstItem="mqa-os-edj" firstAttribute="bottom" secondItem="dyX-fc-JRy" secondAttribute="bottom" id="CnL-qS-Hbi"/>
+                            <constraint firstItem="mqa-os-edj" firstAttribute="leading" secondItem="dyX-fc-JRy" secondAttribute="leading" id="XFk-Kf-0yO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dyX-fc-JRy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gọi Điện" id="fzq-8E-0t7"/>
+                    <connections>
+                        <outlet property="tableData" destination="mqa-os-edj" id="XTR-xS-OTi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bd5-1I-DXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3701.449275362319" y="-871.46739130434787"/>
+        </scene>
         <!--Gửi Thông Báo-->
         <scene sceneID="07L-O0-Lqb">
             <objects>
-                <viewController id="efr-ax-iWh" customClass="SendNotificationsVC" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="efr-ax-iWh" customClass="SendNotificationsVC" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSl-ba-GdS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,7 +488,7 @@
         <!--Gửi TB: Toàn Bộ-->
         <scene sceneID="lAO-pi-iOY">
             <objects>
-                <viewController id="7tc-6r-ZBg" customClass="FormSendAllStudent" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7tc-6r-ZBg" customClass="FormSendAllStudent" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e6D-1o-BXh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,7 +504,7 @@
         <!--Gửi TB: Học Sinh-->
         <scene sceneID="DyH-uW-97O">
             <objects>
-                <viewController id="N48-AZ-JJE" customClass="FormSendSingleStudent" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N48-AZ-JJE" customClass="FormSendSingleStudent" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tb5-RO-Z3T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -351,7 +513,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListStudentCell" textLabel="A5o-qg-TEV" detailTextLabel="jER-uC-CLF" style="IBUITableViewCellStyleSubtitle" id="fbq-UT-stM" customClass="ListStudentCell" customModule="BM_Administrator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListStudentCell" textLabel="A5o-qg-TEV" detailTextLabel="jER-uC-CLF" style="IBUITableViewCellStyleSubtitle" id="fbq-UT-stM" customClass="ListStudentCell" customModule="BM_Admin" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fbq-UT-stM" id="dIe-je-CGc">
@@ -409,7 +571,7 @@
         <!--Gửi TB: Lớp Học-->
         <scene sceneID="2rX-rt-UaD">
             <objects>
-                <viewController id="avT-EA-fub" customClass="SendToClassroomViewController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="avT-EA-fub" customClass="SendToClassroomViewController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t0T-1S-mqo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +580,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassroomSendNotifyCell" textLabel="fHn-Bk-zL8" detailTextLabel="rI4-vf-wI8" style="IBUITableViewCellStyleSubtitle" id="YJI-oj-d8O" customClass="ClassroomSendNotifyCell" customModule="BM_Administrator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassroomSendNotifyCell" textLabel="fHn-Bk-zL8" detailTextLabel="rI4-vf-wI8" style="IBUITableViewCellStyleSubtitle" id="YJI-oj-d8O" customClass="ClassroomSendNotifyCell" customModule="BM_Admin" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YJI-oj-d8O" id="dwP-uO-wEL">
@@ -481,7 +643,7 @@
         <!--Gửi TB: Ca Học-->
         <scene sceneID="erp-ZD-1kf">
             <objects>
-                <viewController id="xy9-Aj-BHM" customClass="SendToEventViewController" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xy9-Aj-BHM" customClass="SendToEventViewController" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cD8-bl-5jq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,7 +652,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="eventCell" textLabel="grt-2A-y3M" detailTextLabel="7fF-eG-j6B" style="IBUITableViewCellStyleSubtitle" id="Xkv-4f-ciW" customClass="EventCell" customModule="BM_Administrator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="eventCell" textLabel="grt-2A-y3M" detailTextLabel="7fF-eG-j6B" style="IBUITableViewCellStyleSubtitle" id="Xkv-4f-ciW" customClass="EventCell" customModule="BM_Admin" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xkv-4f-ciW" id="7h2-Kh-Eel">
@@ -553,7 +715,7 @@
         <!--Danh Sách Học Sinh-->
         <scene sceneID="bJh-2D-brD">
             <objects>
-                <viewController id="LIq-nc-TLH" customClass="ListEventStudent" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListStudentToSend" id="LIq-nc-TLH" customClass="ListEventStudent" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jnK-hv-Uwo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,7 +724,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventStudentCell" textLabel="bQb-uS-C0z" detailTextLabel="I1S-jE-Scs" style="IBUITableViewCellStyleSubtitle" id="tdJ-2B-TkV" customClass="EventStudentCell" customModule="BM_Administrator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventStudentCell" textLabel="bQb-uS-C0z" detailTextLabel="I1S-jE-Scs" style="IBUITableViewCellStyleSubtitle" id="tdJ-2B-TkV" customClass="EventStudentCell" customModule="BM_Admin" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tdJ-2B-TkV" id="8jG-DM-5dK">
@@ -625,9 +787,9 @@
         <!--Nhập Nội Dung-->
         <scene sceneID="J2W-DO-KJa">
             <objects>
-                <viewController title="Nhập Nội Dung" id="Lr3-WM-fa6" customClass="ContentSendEvent" customModule="BM_Administrator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Nhập Nội Dung" id="Lr3-WM-fa6" customClass="ContentSendEvent" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6H9-ui-rfB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="vf4-Li-a48"/>
@@ -665,7 +827,7 @@
                     <tabBarItem key="tabBarItem" title="Gửi Thông Báo" image="notifications" id="MIx-9K-616"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pWJ-e5-uBn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -677,6 +839,24 @@
             </objects>
             <point key="canvasLocation" x="1057.9710144927537" y="636.68478260869574"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5i7-cT-NtO">
+            <objects>
+                <navigationController storyboardIdentifier="navigationresultScreen" automaticallyAdjustsScrollViewInsets="NO" id="U9h-gN-JfZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FUE-bW-muH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7fG-UI-ywt" kind="relationship" relationship="rootViewController" id="J7i-Ya-86g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VR7-Kd-5xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="-498.80059970014997"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="425" height="603"/>
@@ -686,7 +866,7 @@
         <image name="wave" width="1887" height="526"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mnz-as-lDt"/>
-        <segue reference="iVP-r0-jdt"/>
+        <segue reference="R5D-IP-W8E"/>
+        <segue reference="dRu-CL-qpB"/>
     </inferredMetricsTieBreakers>
 </document>
