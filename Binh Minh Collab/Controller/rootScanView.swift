@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import PanModal
 import Kingfisher
+import AVKit
 import NotificationBannerSwift
 import JGProgressHUD
 class rootScanView: ScanView, ScanViewDelegate {
@@ -39,34 +40,48 @@ class rootScanView: ScanView, ScanViewDelegate {
                 self.hud.dismiss()
                 switch data?.status {
                     case "failed":
+                        AudioServicesPlaySystemSound(1395)
                         let title = "Có lỗi"
                         let subtitle = data?.errorExplain
                         let banner = FloatingNotificationBanner(title: title, subtitle: subtitle, style: .danger)
-                        banner.duration = 5.0
+                        banner.duration = 3.0
                         banner.show()
                     
                     case "warning":
+                        AudioServicesPlaySystemSound(1395)
                         let title = "Cảnh báo"
                         let subtitle = data?.errorExplain
                         let banner = FloatingNotificationBanner(title: title, subtitle: subtitle, style: .warning)
-                        banner.duration = 5.0
+                        banner.duration = 3.0
                         banner.show()
 
                     case "success":
+                        AudioServicesPlaySystemSound(1394)
                         let title = "Thành công"
                         let subtitle = "Lớp: \(data?.checkInDetails?.classroomName ?? "")\nCập nhật: \(data?.checkInDetails?.currentStudents ?? -1)/\(data?.checkInDetails?.numberStudents ?? -1) học sinh"
                         let banner = FloatingNotificationBanner(title: title, subtitle: subtitle, style: .success)
-                        banner.duration = 5.0
+                        banner.duration = 3.0
                         banner.show()
                     case .none:
                         break
                     case .some(_):
                         break
                     }
-//                title = "Điểm danh lớp \(data?.classroom_name ?? "")"
-//                subtitle = "Cập nhật: \(data?.lecture_students ?? -1)/\(data?.classroom_students ?? -1) học sinh"
-
             })
+            APIManager.getStudentDetail(encrypted_id: CheckInRequest.loginToken, completion: {(student, error) in
+                            if let error = error {
+                                print(error)
+                                return
+                            }
+                            let x = StudentInfoModal(
+                                name: "ID: \(student?.id ?? -1) - \(student?.studentName ?? "")",
+                                describe: student?.birthday ?? "",
+                                avatar: Constant.baseURL+(student?.avatar.url ?? "")
+                            )
+            
+                            let Modal = PopUpModal(presentable: x)
+                            self.presentPanModal(Modal)
+                        })
             print(CheckInRequest)
         } catch {
             let banner = FloatingNotificationBanner(title: "Mã Điểm Danh Không Đúng Định Dạng", subtitle: ScanValue, style: .danger)
@@ -74,20 +89,7 @@ class rootScanView: ScanView, ScanViewDelegate {
             self.hud.dismiss()
         }
 
-//            APIManager.getStudentDetail(id: id!, completion: {(student, error) in
-//                if let error = error {
-//                    print(error)
-//                    return
-//                }
-//                let x = StudentInfoModal(
-//                    name: "ID: \(id!) - \(student!.name)",
-//                    describe: student!.birthday,
-//                    avatar: Constant.baseURL+student!.image
-//                )
-//
-//                let Modal = PopUpModal(presentable: x)
-//                self.presentPanModal(Modal)
-//            })
+
     }
 }
 

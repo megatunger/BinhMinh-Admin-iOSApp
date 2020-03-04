@@ -165,7 +165,7 @@ class ContentSendEvent: FormViewController, MFMessageComposeViewControllerDelega
         }
     }
     
-    func messageComposeViewController(_ controller: MFMessageComposeViewController!, didFinishWith result: MessageComposeResult) {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         //... handle sms screen actions
         self.dismiss(animated: true, completion: nil)
     }

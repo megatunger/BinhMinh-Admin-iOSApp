@@ -54,8 +54,8 @@ class BinhMinhAPIManager: Networkable {
         }
     }
     
-    func getStudentDetail(id: Int, completion: @escaping (Student?, Error?) -> ()) {
-        provider.request(.getStudentDetail(id: id))
+    func getStudentDetail(encrypted_id: String, completion: @escaping (StudentDetails?, Error?) -> ()) {
+        provider.request(.getStudentDetail(encrypted_id: encrypted_id))
         { (response) in
             switch response.result {
             case .failure(let error):
@@ -63,7 +63,7 @@ class BinhMinhAPIManager: Networkable {
             case .success(let value):
                 let decoder = JSONDecoder()
                 do {
-                    let student = try decoder.decode(Student.self, from: value.data)
+                    let student = try decoder.decode(StudentDetails.self, from: value.data)
                     completion(student, nil)
                 } catch let error {
                     completion(nil, error)
@@ -91,39 +91,18 @@ class BinhMinhAPIManager: Networkable {
         }
     }
     
-    func getAbsentList(completion: @escaping ([ClassSections]?, Error?) -> ()) {
-        provider.request(.getAbsentList) {
-            (response) in
+    func getAbsentList(completion: @escaping ([EventDetails]?, Error?) -> ()) {
+        provider.request(.getAbsentList)
+        { (response) in
             switch response.result {
             case .failure(let error):
                 completion(nil, error)
             case .success(let value):
-                var sections = [ClassSections]()
+                let decoder = JSONDecoder()
+                print(value.data)
                 do {
-                    let json = try JSON(data: value.data)
-                    for (_,subJson):(String, JSON) in json["results"] {
-                        var Students_Off_Per_Class = [Student_Off]()
-                        for (_index, _subJson):(String, JSON) in subJson["students"] {
-                            print(_index)
-                            print(_subJson)
-                            let x = Student_Off.init(id: _subJson["id"].intValue,
-                                                     name: "ID: \(_subJson["id"].intValue) - \(_subJson["student_name"].stringValue)",
-                                phone: self.cleanPhoneNumber(number: _subJson["phone"].stringValue),
-                                description: _subJson["school"].stringValue,
-                                class_id: 1,
-                                father: Father.init(name: _subJson["father_name"].stringValue, phone: self.cleanPhoneNumber(number: _subJson["father_phone"].stringValue)),
-                                mother: Mother.init(name: _subJson["mother_name"].stringValue, phone: self.cleanPhoneNumber(number: _subJson["mother_phone"].stringValue)),
-                                avatar: Constant.baseURL + _subJson["avatar"]["thumb"]["url"].stringValue
-                            )
-                            Students_Off_Per_Class.append(x)
-                        }
-                        let section = ClassSections.init(class_id: subJson["class_id"].intValue,
-                                                         class_name: subJson["class_name"].stringValue + ". " + subJson["time"].stringValue,
-                                                         students: Students_Off_Per_Class
-                        )
-                        sections.append(section)
-                    }
-                    completion(sections, nil)
+                    let x = try decoder.decode([EventDetails]?.self, from: value.data)
+                    completion(x, nil)
                 } catch let error {
                     completion(nil, error)
                 }

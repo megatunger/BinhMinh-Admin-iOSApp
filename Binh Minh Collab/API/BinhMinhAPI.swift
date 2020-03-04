@@ -13,7 +13,7 @@ import Moya
 public enum BinhMinhAPI {
     case login(email: String, password: String)
     case testConnection
-    case getStudentDetail(id: Int)
+    case getStudentDetail(encrypted_id: String)
     case autoCheckIn(login_token: String, otp: String)
     case getAbsentList
     case manualCheckinGetData(id: Int)
@@ -42,8 +42,8 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return "/login"
         case .testConnection:
             return "/test-connection"
-        case .getStudentDetail(let id):
-            return "/students/\(id).json"
+        case .getStudentDetail:
+            return "/student"
         case .autoCheckIn( _, _):
             return "/check-in"
         case .getAbsentList:
@@ -108,8 +108,10 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return .requestParameters(parameters: ["email": email, "password": password], encoding: URLEncoding.queryString)
         case .testConnection:
             return .requestPlain
-        case .getStudentDetail:
-            return .requestPlain
+            
+        // Student Management Features
+        case .getStudentDetail(let encrypted_id):
+            return .requestParameters(parameters: ["encrypted_id": encrypted_id], encoding: URLEncoding.queryString)
             
         // Checkin features
         case .autoCheckIn(let login_token, let otp):
@@ -165,9 +167,9 @@ protocol Networkable {
     func testConnection(completion: @escaping(Response?, Error?) -> ())
     
     // Bearer APIs
-    func getStudentDetail(id: Int, completion: @escaping (Student?, Error?) -> ())
+    func getStudentDetail(encrypted_id: String, completion: @escaping (StudentDetails?, Error?) -> ())
     func autoCheckIn(login_token: String, otp: String, completion: @escaping (CheckInResponse?, Error?) -> ())
-    func getAbsentList(completion: @escaping([ClassSections]?, Error?) -> ())
+    func getAbsentList(completion: @escaping([EventDetails]?, Error?) -> ())
     func manualCheckinGetData(id: Int, completion: @escaping(manualCheckinResponse?, Error?) -> ())
     func manualCheckinSubmitData(student_id: Int, classroom_id: Int, event_id: Int, completion: @escaping(Response?, Error?) -> ())
     

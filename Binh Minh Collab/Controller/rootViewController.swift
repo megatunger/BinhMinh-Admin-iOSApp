@@ -21,11 +21,6 @@ class rootViewController: UIViewController {
         self.navigationController?.pushViewController(ScanViewController, animated: true)
     }
     
-    @IBAction func reviewCheckIn(_ sender: Any) {
-        let resultScreenVC:UIViewController = UIStoryboard(name: "resultScreen", bundle: nil).instantiateViewController(withIdentifier: "navigationresultScreen") as UIViewController
-        self.present(resultScreenVC, animated: true, completion: nil)
-    }
-    
     @IBAction func manualCheckin(_ sender: Any) {
         let manualScreenVC: UIViewController = UIStoryboard(name: "manualCheckin", bundle: nil).instantiateViewController(withIdentifier: "manualCheckinNC") as UIViewController
         self.present(manualScreenVC, animated: true, completion: nil)
