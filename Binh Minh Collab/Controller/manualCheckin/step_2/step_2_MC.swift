@@ -28,9 +28,17 @@ class step_2_MC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         hud.textLabel.text = "Đang tải dữ liệu"
         hud.show(in: self.view)
         APIManager.manualCheckinGetData(id: params.student_id ?? 0, completion: {(_data, error) in
-            self.data = _data!
-            self.tableView.reloadData()
-            self.hud.dismiss(afterDelay: 0.3)
+            if (_data != nil) {
+                self.data = _data!
+                self.tableView.reloadData()
+                self.hud.dismiss(afterDelay: 0.3)
+            } else {
+                let alert = UIAlertController(title: "Có lỗi xảy ra", message: "Không tìm thấy dữ liệu", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
         })
     }
     
