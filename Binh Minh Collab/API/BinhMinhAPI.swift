@@ -25,7 +25,8 @@ public enum BinhMinhAPI {
     case searchStudent(query: String)
     case getClassrooms
     case getClassroomStudents(class_id: Int)
-    
+    case getQuestion(question_hash_id: String)
+    case uploadQuestionGuidelines(question_hash_id: String, upload_data: Dictionary<String, String>)
 }
 
 extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
@@ -66,39 +67,47 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return "/notifications/get-classrooms"
         case .getClassroomStudents:
             return "/notifications/get-students"
+        case .getQuestion:
+            return "/homework/get-question"
+        case .uploadQuestionGuidelines:
+            return "/homework/upload-guidelines.json"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-            case .login:
-                return .post
-            case .testConnection:
-                return .get
-            case .getStudentDetail:
-                return .get
-            case .autoCheckIn:
-                return .post
-            case .getAbsentList:
-                return .get
-            case .manualCheckinGetData:
-                return .get
-            case .manualCheckinSubmitData:
-                return .post
-            case .searchStudent:
-                return .get
-            case .getEvents:
-                return .get
-            case .getEventStudents:
-                return .get
-            case .sendNotifications:
-                return .post
-            case .sendNotificationsToAll:
-                return .post
-            case .getClassrooms:
-                return .get
-            case .getClassroomStudents:
-                return .get
+        case .login:
+            return .post
+        case .testConnection:
+            return .get
+        case .getStudentDetail:
+            return .get
+        case .autoCheckIn:
+            return .post
+        case .getAbsentList:
+            return .get
+        case .manualCheckinGetData:
+            return .get
+        case .manualCheckinSubmitData:
+            return .post
+        case .searchStudent:
+            return .get
+        case .getEvents:
+            return .get
+        case .getEventStudents:
+            return .get
+        case .sendNotifications:
+            return .post
+        case .sendNotificationsToAll:
+            return .post
+        case .getClassrooms:
+            return .get
+        case .getClassroomStudents:
+            return .get
+        case .getQuestion:
+            return .get
+        case .uploadQuestionGuidelines:
+            return .post
         }
     }
     
@@ -142,7 +151,16 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return .requestPlain
         case .getClassroomStudents(let class_id):
             return .requestParameters(parameters: ["class_id": class_id], encoding: URLEncoding.queryString)
+            
+        // Learning Support Features
+        case .getQuestion(let question_hash_id):
+            return .requestParameters(parameters: ["question_hash_id": question_hash_id], encoding: URLEncoding.queryString)
+
+        case .uploadQuestionGuidelines(let question_hash_id, let upload_data):
+            return .requestParameters(parameters: ["question_hash_id": question_hash_id, "upload_data": upload_data], encoding: JSONEncoding.default)
+
         }
+        
     }
     
     public var sampleData: Data {
@@ -151,10 +169,10 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
     
     public var authorizationType: AuthorizationType {
         switch self {
-            case .login:
-                return .none
-            default:
-                return .bearer
+        case .login:
+            return .none
+        default:
+            return .bearer
         }
     }
 }
@@ -183,4 +201,19 @@ protocol Networkable {
     
     // Search APIs
     func searchStudent(query: String, completion: @escaping([EventStudents]?, Error?) -> ())
+    
+    // Learning Support Features
+    func getQuestion(question_hash_id: String, completion: @escaping(QuestionResponse?, Error?) -> ())
+    func uploadQuestionGuidelines(question_hash_id: String, upload_data: Dictionary<String, String>, completion: @escaping(Response?, Error?) -> ())
+}
+
+extension Dictionary {
+    var jsonStringRepresentation: String? {
+        guard let theJSONData = try? JSONSerialization.data(withJSONObject: self,
+                                                            options: [.prettyPrinted]) else {
+            return nil
+        }
+
+        return String(data: theJSONData, encoding: .utf8)
+    }
 }

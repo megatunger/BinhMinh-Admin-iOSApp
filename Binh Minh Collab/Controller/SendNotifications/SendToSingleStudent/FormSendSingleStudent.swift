@@ -17,7 +17,6 @@ class FormSendSingleStudent: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchController()
-//        setupTableViewBackgroundView()
         
     }
     
@@ -43,15 +42,6 @@ class FormSendSingleStudent: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "studentSelectedSendNotify", sender: nil)
-    }
-    private func setupTableViewBackgroundView() {
-        let backgroundViewLabel = UILabel(frame: .zero)
-        backgroundViewLabel.textColor = .darkGray
-        backgroundViewLabel.numberOfLines = 0
-        backgroundViewLabel.text = " Không có kết quả "
-        backgroundViewLabel.textAlignment = NSTextAlignment.center
-        backgroundViewLabel.font.withSize(20)
-        studentsTable.backgroundView = backgroundViewLabel
     }
     
     private func setupSearchController() {

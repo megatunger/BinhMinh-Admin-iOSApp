@@ -5,7 +5,9 @@ target 'Binh Minh Collab' do
   use_frameworks!
 
   # Pods for Binh Minh Collab
+  pod "BSImagePicker", "~> 3.1"
   pod 'PanModal'
+  pod 'MercariQRScanner'
   pod 'Alamofire', '~> 4.1'
   pod 'Moya', '~> 13.0'
   pod 'Kingfisher', '~> 5.0'

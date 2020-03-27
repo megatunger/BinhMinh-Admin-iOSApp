@@ -13,7 +13,7 @@ struct Constant {
     static var cornerRadius = 15
     
     static var baseURL = "https://binhminh.megatunger.codes"
-//    static var baseURL = "http://192.168.50.111:3000"
+//    static var baseURL = "http://192.168.2.106:3000"
     
     static let APIManager = BinhMinhAPIManager()
     

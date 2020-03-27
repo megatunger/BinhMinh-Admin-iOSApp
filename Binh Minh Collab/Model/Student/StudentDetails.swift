@@ -74,7 +74,7 @@ struct StudentDetails: Codable {
         motherPhone = try values.decode(String.self, forKey: .motherPhone)
         email = try values.decode(String.self, forKey: .email)
         status = try values.decode(Int.self, forKey: .status)
-        khoiThi = try values.decode(String.self, forKey: .khoiThi)
+        khoiThi = try values.decodeIfPresent(String.self, forKey: .khoiThi) ?? ""
         diemVao10 = try values.decode(String.self, forKey: .diemVao10)
         ngayDk = try values.decode(String.self, forKey: .ngayDk)
         note = try values.decode(String.self, forKey: .note)

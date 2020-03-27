@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.0)
+  - BSImagePicker (3.1.1)
   - Eureka (5.1.0)
   - Firebase/Analytics (6.18.0):
     - Firebase/Core
@@ -67,6 +68,7 @@ PODS:
   - Kingfisher/Core (5.8.3)
   - LTHRadioButton (1.2.3)
   - MarqueeLabel (4.0.0)
+  - MercariQRScanner (1.5)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -91,11 +93,13 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.1)
+  - BSImagePicker (~> 3.1)
   - Eureka
   - Firebase/Analytics
   - JGProgressHUD
   - Kingfisher (~> 5.0)
   - LTHRadioButton
+  - MercariQRScanner
   - Moya (~> 13.0)
   - NotificationBannerSwift
   - PanModal
@@ -105,6 +109,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BSImagePicker
     - Eureka
     - Firebase
     - FirebaseAnalytics
@@ -120,6 +125,7 @@ SPEC REPOS:
     - Kingfisher
     - LTHRadioButton
     - MarqueeLabel
+    - MercariQRScanner
     - Moya
     - nanopb
     - NotificationBannerSwift
@@ -132,6 +138,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  BSImagePicker: 86f28e0f63b78d35fec7c6f0174b7af9e6f1431e
   Eureka: 18a5076dcf0c41f9cd9748aa1c42f4d11434bdae
   Firebase: 0490eca762a72e4f1582319539153897f1508dee
   FirebaseAnalytics: 058d71e714a1a6804d9e0f25e3bb18e377a51579
@@ -147,6 +154,7 @@ SPEC CHECKSUMS:
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
   LTHRadioButton: b20980614572f7911272a6b8aa79ec0fdc9a74d4
   MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
+  MercariQRScanner: 2bec5b24cd5baf8a63a0cb905909ae7297a0dae2
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NotificationBannerSwift: 842401d30f5c36e4f2eafc152824566f6b3c1bb5
@@ -157,6 +165,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: a66f5ce52ba4e054f7b1ebc9ea8cd50d81a94102
+PODFILE CHECKSUM: d8eb253cff44d352f1cb623bbe40078c199f7ab3
 
 COCOAPODS: 1.8.4
