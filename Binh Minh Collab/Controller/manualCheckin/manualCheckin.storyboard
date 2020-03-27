@@ -1,100 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nhập ID-->
-        <scene sceneID="jHh-fR-V35">
-            <objects>
-                <viewController id="pH9-r1-A2g" customClass="manualCheckin" customModule="Binh_Minh_Collab" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qYD-Fe-0US">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manualCheckin" translatesAutoresizingMaskIntoConstraints="NO" id="JHi-P8-6RQ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="271.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="JHi-P8-6RQ" secondAttribute="height" multiplier="414:337" constant="41.768545994065278" id="Wig-Hb-ib8"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập ID học sinh" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ER5-Rj-00f">
-                                <rect key="frame" x="90" y="315.5" width="195" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="KaU-Is-7pw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRI-uA-RkX">
-                                <rect key="frame" x="16" y="587" width="343" height="60"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="vWY-IX-6rM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Tiếp theo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextStepTap:" destination="pH9-r1-A2g" eventType="touchUpInside" id="cCw-fe-of7"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ID học sinh. Ví dụ: 123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLY-I3-dik">
-                                <rect key="frame" x="20" y="423.5" width="335" height="48"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="NWB-rh-nxv"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ixZ-Mh-WGu" firstAttribute="trailing" secondItem="ER5-Rj-00f" secondAttribute="trailing" constant="90" id="6Jr-QE-kYX"/>
-                            <constraint firstItem="ER5-Rj-00f" firstAttribute="top" secondItem="JHi-P8-6RQ" secondAttribute="bottom" id="Ba6-gh-kD3"/>
-                            <constraint firstItem="ixZ-Mh-WGu" firstAttribute="bottom" secondItem="oRI-uA-RkX" secondAttribute="bottom" constant="20" id="Cvf-i2-LQt"/>
-                            <constraint firstItem="oRI-uA-RkX" firstAttribute="leading" secondItem="ixZ-Mh-WGu" secondAttribute="leading" constant="16" id="J7U-yP-Xis"/>
-                            <constraint firstItem="cLY-I3-dik" firstAttribute="leading" secondItem="ixZ-Mh-WGu" secondAttribute="leading" constant="20" id="KAJ-1h-Oci"/>
-                            <constraint firstItem="ixZ-Mh-WGu" firstAttribute="trailing" secondItem="cLY-I3-dik" secondAttribute="trailing" constant="20" id="PFv-oL-zAi"/>
-                            <constraint firstItem="ER5-Rj-00f" firstAttribute="leading" secondItem="ixZ-Mh-WGu" secondAttribute="leading" constant="90" id="QOA-VX-OPo"/>
-                            <constraint firstItem="JHi-P8-6RQ" firstAttribute="trailing" secondItem="ixZ-Mh-WGu" secondAttribute="trailing" id="SqF-Pv-oSh"/>
-                            <constraint firstItem="cLY-I3-dik" firstAttribute="top" secondItem="ER5-Rj-00f" secondAttribute="bottom" constant="24" id="Y3Q-AU-m4M"/>
-                            <constraint firstItem="JHi-P8-6RQ" firstAttribute="leading" secondItem="ixZ-Mh-WGu" secondAttribute="leading" id="isR-dG-68X"/>
-                            <constraint firstItem="JHi-P8-6RQ" firstAttribute="top" secondItem="ixZ-Mh-WGu" secondAttribute="top" id="nj6-aW-zbl"/>
-                            <constraint firstItem="ixZ-Mh-WGu" firstAttribute="trailing" secondItem="oRI-uA-RkX" secondAttribute="trailing" constant="16" id="xhe-QG-BIh"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ixZ-Mh-WGu"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Nhập ID" id="qSp-MA-xhB"/>
-                    <connections>
-                        <outlet property="idField" destination="cLY-I3-dik" id="SLL-If-77d"/>
-                        <outlet property="nextStep1" destination="oRI-uA-RkX" id="rB4-wl-bP1"/>
-                        <segue destination="mp8-cn-Lz3" kind="show" identifier="step_1" id="74X-sI-BKB"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k4R-vj-lPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-44" y="-141"/>
-        </scene>
         <!--Chọn lớp học-->
         <scene sceneID="uXM-ZW-8nd">
             <objects>
-                <viewController id="mp8-cn-Lz3" customClass="step_2_MC" customModule="Binh_Minh_Collab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="step_2_MC" id="mp8-cn-Lz3" customClass="step_2_MC" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ivV-P7-d2C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r97-wt-xPM">
                                 <rect key="frame" x="16" y="587" width="343" height="60"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="set-xt-ymw"/>
                                 </constraints>
@@ -107,10 +31,10 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eYF-um-nhQ">
-                                <rect key="frame" x="0.0" y="243" width="375" height="312"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="356"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassroomCell" textLabel="JpY-Ar-Fid" detailTextLabel="26i-Ff-Hv0" style="IBUITableViewCellStyleSubtitle" id="uQs-Gx-WlK" customClass="ClassroomCell" customModule="Binh_Minh_Collab" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassroomCell" textLabel="JpY-Ar-Fid" detailTextLabel="26i-Ff-Hv0" style="IBUITableViewCellStyleSubtitle" id="uQs-Gx-WlK" customClass="ClassroomCell" customModule="BM_Admin" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQs-Gx-WlK" id="IBb-7T-JLi">
@@ -133,7 +57,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="classroom_description" destination="26i-Ff-Hv0" id="HJ3-nS-Frm"/>
                                             <outlet property="classroom_title" destination="JpY-Ar-Fid" id="0Zp-LX-dzk"/>
@@ -143,7 +67,7 @@
                                 <sections/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose_lecture" translatesAutoresizingMaskIntoConstraints="NO" id="LNG-dy-Ers">
-                                <rect key="frame" x="0.0" y="44" width="375" height="199"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LNG-dy-Ers" secondAttribute="height" multiplier="375:199" id="hgd-rO-UHD"/>
                                 </constraints>
@@ -179,14 +103,14 @@
         <!--Chọn ca học-->
         <scene sceneID="Za2-LE-Vcf">
             <objects>
-                <viewController id="N4T-JE-Q2W" customClass="step_3_MC" customModule="Binh_Minh_Collab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N4T-JE-Q2W" customClass="step_3_MC" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nu7-db-olD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymI-aT-eyN">
-                                <rect key="frame" x="16" y="587" width="343" height="60"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="567" width="343" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="za2-ee-8kj"/>
                                 </constraints>
@@ -199,10 +123,10 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Kl6-7z-Nvu">
-                                <rect key="frame" x="0.0" y="44" width="375" height="511"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="535"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LectureCell" textLabel="XDt-PO-NTV" detailTextLabel="14s-cP-fTY" style="IBUITableViewCellStyleSubtitle" id="hJn-tL-9UX" customClass="LectureCell" customModule="Binh_Minh_Collab" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LectureCell" textLabel="XDt-PO-NTV" detailTextLabel="14s-cP-fTY" style="IBUITableViewCellStyleSubtitle" id="hJn-tL-9UX" customClass="LectureCell" customModule="BM_Admin" customModuleProvider="target">
                                         <rect key="frame" x="15" y="55.5" width="345" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hJn-tL-9UX" id="N0Y-VT-X54">
@@ -260,14 +184,14 @@
         <!--FinishedMC-->
         <scene sceneID="xqK-rP-yTf">
             <objects>
-                <viewController id="fvG-bz-kTZ" customClass="finished_MC" customModule="Binh_Minh_Collab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fvG-bz-kTZ" customClass="finished_MC" customModule="BM_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Djz-f0-z2J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buW-Oe-a2A">
-                                <rect key="frame" x="20" y="587" width="335" height="60"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="20" y="567" width="335" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CUo-gk-Pxb"/>
                                 </constraints>
@@ -280,13 +204,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completed" translatesAutoresizingMaskIntoConstraints="NO" id="9Dp-IX-pR7">
-                                <rect key="frame" x="0.0" y="92" width="375" height="274.5"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="274.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Dp-IX-pR7" secondAttribute="height" multiplier="138:101" id="d76-bP-Dfg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hệ thống đã lưu thành công!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-Jk-vx6">
-                                <rect key="frame" x="63" y="390.5" width="250" height="81"/>
+                                <rect key="frame" x="63" y="346.5" width="250" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="zk9-g8-pUr"/>
                                 </constraints>
@@ -318,28 +242,9 @@
             </objects>
             <point key="canvasLocation" x="2350.7246376811595" y="-139.4021739130435"/>
         </scene>
-        <!--Mc Navigation-->
-        <scene sceneID="rDK-i4-gtV">
-            <objects>
-                <navigationController storyboardIdentifier="manualCheckinNC" automaticallyAdjustsScrollViewInsets="NO" id="QCs-rJ-dXd" customClass="mcNavigation" customModule="Binh_Minh_Collab" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r0U-sU-RaW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="pH9-r1-A2g" kind="relationship" relationship="rootViewController" id="qLL-NA-nuZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fmx-Ul-UsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-810.14492753623199" y="-139.4021739130435"/>
-        </scene>
     </scenes>
     <resources>
         <image name="choose_lecture" width="1368" height="912"/>
         <image name="completed" width="1368" height="912"/>
-        <image name="manualCheckin" width="1368" height="912"/>
     </resources>
 </document>

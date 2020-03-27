@@ -21,11 +21,6 @@ class rootViewController: UIViewController {
         self.navigationController?.pushViewController(ScanViewController, animated: true)
     }
     
-    @IBAction func manualCheckin(_ sender: Any) {
-        let manualScreenVC: UIViewController = UIStoryboard(name: "manualCheckin", bundle: nil).instantiateViewController(withIdentifier: "manualCheckinNC") as UIViewController
-        self.present(manualScreenVC, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         Style()

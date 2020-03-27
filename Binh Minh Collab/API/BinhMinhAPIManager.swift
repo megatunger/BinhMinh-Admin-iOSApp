@@ -15,6 +15,7 @@ let authPlugin = AccessTokenPlugin { token }
 
 class BinhMinhAPIManager: Networkable {
     
+    
     var provider = MoyaProvider<BinhMinhAPI>(plugins: [NetworkLoggerPlugin(verbose: true), authPlugin])
     
     
@@ -299,6 +300,45 @@ class BinhMinhAPIManager: Networkable {
         }
     }
     
+    
+    func getQuestion(question_hash_id: String, completion: @escaping (QuestionResponse?, Error?) -> ()) {
+        provider.request(.getQuestion(question_hash_id: question_hash_id)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(QuestionResponse.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
+    
+    func uploadQuestionGuidelines(question_hash_id: String, upload_data: Dictionary<String, String>, completion: @escaping (Response?, Error?) -> ()) {
+        provider.request(.uploadQuestionGuidelines(question_hash_id: question_hash_id, upload_data: upload_data)) {
+            (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(Response.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    print(error)
+                    completion(nil, error)
+                }
+            }
+        }
+    }
 }
 
 extension BinhMinhAPIManager {
