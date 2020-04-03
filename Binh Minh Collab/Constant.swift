@@ -7,11 +7,19 @@
 //
 
 import Foundation
-
+import JGProgressHUD
 struct Constant {
     
     static var cornerRadius = 15
     
-    static var baseURL = "http://binhminh.megatunger.codes"
+    static var baseURL = "https://binhminh.megatunger.codes"
+//    static var baseURL = "http://192.168.2.106:3000"
     
+    static let APIManager = BinhMinhAPIManager()
+    
+    static var hud = JGProgressHUD(style: .dark)
+    
+    static let apiToken = UserDefaults.standard.string(forKey: "apiToken")
+    
+    static let unknown = "Đang cập nhật"
 }

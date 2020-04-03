@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 import Vision
-
+import JGProgressHUD
 
 public protocol ScanViewDelegate {
     func ScanResult(ScanValue: String)
@@ -22,19 +22,37 @@ class ScanView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     var previewLayer: AVCaptureVideoPreviewLayer?
     var delegate: ScanViewDelegate?
     var deinitVisionFramework = false
+    let hud = JGProgressHUD(style: .dark)
     
-    private let visionQueue = DispatchQueue(label: "com.example.apple samplecode.ARKitVision.serialVisionQueue")
+    private let visionQueue = DispatchQueue(label: "codes.megatunger qr.code.scanning")
     
     override func viewWillLayoutSubviews() {
-        let width = self.view.frame.width
-        let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
-        self.view.addSubview(navigationBar);
-        let closeBtn = UIBarButtonItem(title: "Thoát", style: UIBarButtonItem.Style.done, target: nil, action: #selector(selectorX))
-        closeBtn.title = "Thoát"
-        navigationItem.leftBarButtonItem = closeBtn
-        let saveBtn = UIBarButtonItem(title: "Lưu", style: UIBarButtonItem.Style.done, target: nil, action: #selector(selectorY))
-        navigationItem.rightBarButtonItem = saveBtn
-        navigationBar.setItems([navigationItem], animated: false)
+        let closeBtn = UIButton.init(type: .custom)
+        closeBtn.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        closeBtn.setTitle(" Đóng ", for: .normal)
+        closeBtn.setTitleColor(.white, for: .normal)
+        closeBtn.layer.borderWidth = 1
+        closeBtn.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        closeBtn.layer.cornerRadius = CGFloat(Constant.cornerRadius)
+        closeBtn.layer.borderColor = UIColor.systemRed.cgColor
+        closeBtn.layer.backgroundColor = UIColor.systemRed.cgColor
+        closeBtn.addTarget(self, action: #selector(selectorX), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: closeBtn)
+        
+        
+        
+        let doneBtn = UIButton.init(type: .custom)
+        doneBtn.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        doneBtn.setTitle(" Xong ", for: .normal)
+        doneBtn.setTitleColor(.white, for: .normal)
+        doneBtn.layer.borderWidth = 1
+        doneBtn.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        doneBtn.layer.cornerRadius = CGFloat(Constant.cornerRadius)
+        doneBtn.layer.borderColor = UIColor.systemBlue.cgColor
+        doneBtn.layer.backgroundColor = UIColor.systemBlue.cgColor
+        doneBtn.addTarget(self, action: #selector(selectorY), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: doneBtn)
+        
     }
     
     @objc func selectorX() {
@@ -43,7 +61,7 @@ class ScanView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     @objc func selectorY() {
-        let resultScreenVC:UIViewController = UIStoryboard(name: "resultScreen", bundle: nil).instantiateViewController(withIdentifier: "navigationresultScreen") as UIViewController
+        let resultScreenVC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationresultScreen") as UIViewController
         self.present(resultScreenVC, animated: true, completion: nil)
         selectorX()
     }
@@ -57,7 +75,7 @@ class ScanView: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
         cameraPreview.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         cameraPreview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         cameraPreview.contentMode = .scaleAspectFit
-        
+     
         deinitVisionFramework = false
     }
     
