@@ -11,19 +11,27 @@ import UIKit
 class LearningSupportViewController: UIViewController {
     @IBOutlet weak var HomeworkButton: UIButton!
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkAvailableOptions()
         ButtonStyle()
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
+
     private func ButtonStyle() {
         HomeworkButton.layer.cornerRadius = CGFloat(Constant.cornerRadius)
         HomeworkButton.layer.borderWidth = 0
     }
     
-
+    
+    func checkAvailableOptions() {
+        self.checkPermissions(permission_key: "bm_admin_learning_support", completion: {(available) in
+            if !(available) {
+                self.HomeworkButton.isHidden = true
+            } else {
+                self.HomeworkButton.isHidden = false
+            }
+        })
+    }
     /*
     // MARK: - Navigation
 

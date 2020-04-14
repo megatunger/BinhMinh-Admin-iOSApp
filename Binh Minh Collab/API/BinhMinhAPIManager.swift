@@ -15,7 +15,6 @@ let authPlugin = AccessTokenPlugin { token }
 
 class BinhMinhAPIManager: Networkable {
     
-    
     var provider = MoyaProvider<BinhMinhAPI>(plugins: [NetworkLoggerPlugin(verbose: true), authPlugin])
     
     
@@ -54,6 +53,26 @@ class BinhMinhAPIManager: Networkable {
             }
         }
     }
+    
+    
+    func getAccessPermission(completion: @escaping (AccessPermission?, Error?) -> ()) {
+        provider.request(.getAccessPermission)
+        { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(nil, error)
+            case .success(let value):
+                let decoder = JSONDecoder()
+                do {
+                    let x = try decoder.decode(AccessPermission.self, from: value.data)
+                    completion(x, nil)
+                } catch let error {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+    
     
     func getStudentDetail(encrypted_id: String, completion: @escaping (StudentDetails?, Error?) -> ()) {
         provider.request(.getStudentDetail(encrypted_id: encrypted_id))

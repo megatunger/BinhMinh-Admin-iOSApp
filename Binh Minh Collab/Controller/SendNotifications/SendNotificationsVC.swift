@@ -13,23 +13,29 @@ class SendNotificationsVC: UIViewController {
     @IBOutlet weak var classroomButton: UIButton!
     @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var allButton: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkAvailableOptions()
         Style()
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func checkAvailableOptions() {
+        self.checkPermissions(permission_key: "bm_admin_notifications", completion: {(available) in
+            if !(available) {
+                self.studentButton.isHidden = true
+                self.classroomButton.isHidden = true
+                self.eventButton.isHidden = true
+                self.allButton.isHidden = true
+            } else {
+                self.studentButton.isHidden = false
+                self.classroomButton.isHidden = false
+                self.eventButton.isHidden = false
+                self.allButton.isHidden = false
+            }
+        })
     }
-    */
-
 }
 
 
