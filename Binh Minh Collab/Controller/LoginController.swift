@@ -46,9 +46,12 @@ class LoginController: UIViewController {
                         UserDefaults.standard.removeObject(forKey: "apiToken")
                     }))
                     self.present(alert, animated: true, completion: nil)
+                    break
                 case "success":
                     //user is authenticated in just navigate him to home screen
+                    // Kiểm tra các quyền truy cập hệ thống
                     self.performSegue(withIdentifier: "authenticateCompleted", sender: nil)
+                    break
                 case .none:
                     let alert = UIAlertController(title: "Có lỗi xảy ra", message: "Máy chủ không phản hồi", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Thử lại", style: UIAlertAction.Style.default, handler: {_ in
@@ -62,6 +65,8 @@ class LoginController: UIViewController {
             }
         })
     }
+    
+    
     @IBAction func authenticateUser(_ sender: Any) {
         Constant.hud.show(in: self.view)
         Constant.APIManager.login(email: txtUserName.text ?? "", password: txtPassword.text ?? "", completion: {(data, error) in

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>779449214262-bkt3ik8dm1bj6srivesc16bm6lsgljf0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.779449214262-bkt3ik8dm1bj6srivesc16bm6lsgljf0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDwYETlsPOkfSaGcBTcEF2Yf2_BGXwBAjE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>779449214262</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>codes.megatunger.bmadmin</string>
+	<key>PROJECT_ID</key>
+	<string>bmadmin-af311</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bmadmin-af311.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:779449214262:ios:ebd903d5fc341a8a3e7f97</string>
+	<key>DATABASE_URL</key>
+	<string>https://bmadmin-af311.firebaseio.com</string>
+</dict>
+</plist>
