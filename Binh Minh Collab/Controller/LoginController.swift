@@ -64,6 +64,7 @@ class LoginController: UIViewController {
     }
     @IBAction func authenticateUser(_ sender: Any) {
         Constant.hud.show(in: self.view)
+        print(Constant.apiToken)
         Constant.APIManager.login(email: txtUserName.text ?? "", password: txtPassword.text ?? "", completion: {(data, error) in
             Constant.hud.dismiss(animated: true)
             switch data?.status {

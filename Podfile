@@ -17,6 +17,7 @@ target 'Binh Minh Collab' do
   pod 'JGProgressHUD'
   pod 'Eureka'
   pod 'Sentry'
+  pod 'YPImagePicker'
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'
 end
