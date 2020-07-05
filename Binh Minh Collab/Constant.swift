@@ -22,4 +22,6 @@ struct Constant {
     static let apiToken = UserDefaults.standard.string(forKey: "apiToken")
     
     static let unknown = "Đang cập nhật"
+    
+
 }

@@ -13,6 +13,7 @@ import Moya
 public enum BinhMinhAPI {
     case login(email: String, password: String)
     case testConnection
+    case getAccessPermission
     case getStudentDetail(encrypted_id: String)
     case autoCheckIn(login_token: String, otp: String)
     case getAbsentList
@@ -43,6 +44,8 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return "/login"
         case .testConnection:
             return "/test-connection"
+        case.getAccessPermission:
+            return "/permissions"
         case .getStudentDetail:
             return "/student"
         case .autoCheckIn( _, _):
@@ -79,6 +82,8 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
         case .login:
             return .post
         case .testConnection:
+            return .get
+        case .getAccessPermission:
             return .get
         case .getStudentDetail:
             return .get
@@ -117,7 +122,8 @@ extension BinhMinhAPI: TargetType, AccessTokenAuthorizable {
             return .requestParameters(parameters: ["email": email, "password": password], encoding: URLEncoding.queryString)
         case .testConnection:
             return .requestPlain
-            
+        case .getAccessPermission:
+            return .requestPlain
         // Student Management Features
         case .getStudentDetail(let encrypted_id):
             return .requestParameters(parameters: ["encrypted_id": encrypted_id], encoding: URLEncoding.queryString)
@@ -183,6 +189,7 @@ protocol Networkable {
     // Authorize APIs
     func login(email: String, password: String, completion: @escaping (Response?, Error?) -> ())
     func testConnection(completion: @escaping(Response?, Error?) -> ())
+    func getAccessPermission(completion: @escaping(AccessPermission?, Error?) -> ())
     
     // Bearer APIs
     func getStudentDetail(encrypted_id: String, completion: @escaping (StudentDetails?, Error?) -> ())
